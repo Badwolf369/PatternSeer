@@ -1,17 +1,19 @@
 @startuml
 class Main {
-    main()
+    Chart : Chart
+    Display : Display
 }
+
 class Display {
     image : OpenCV Image
     init(self, image:OpenCV Image)
     view()
 }
+Display "1" -u-* Main : < Creates
 
 class Chart {
     Parent : PDFDocument
     Grid : Grid
-    Symbols : Symbol[]
     Threads : Thread[]
 }
 class Grid {
@@ -32,6 +34,9 @@ class Thread {
     Brand : String = "DMC"
 }
 
-Main -r-> "1" Display : Creates
-Main -r-> Display : Updates image
+Chart "1" -u-* Main : < Creates
+Thread "1..*" -d-* Chart
+Thread "1" <-d- Symbol: < References
+Symbol "1..*" -l-o Grid
+Grid "1" -l-* Chart
 @enduml
