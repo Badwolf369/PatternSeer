@@ -8,8 +8,12 @@ class Display {
     image : OpenCV Image
     init(self, image:OpenCV Image)
     view()
+    Display(image:OpenCV Image)
+    view(self)
+    update(self, image:OpenCV Image)
 }
 Display "1" -u-* Main : < Creates
+Display <-u- Main : < Updates
 
 class Chart {
     Parent : PDFDocument
