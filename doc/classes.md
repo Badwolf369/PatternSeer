@@ -6,8 +6,6 @@ class Main {
 
 class Display {
     image : OpenCV Image
-    init(self, image:OpenCV Image)
-    view()
     Display(image:OpenCV Image)
     view(self)
     update(self, image:OpenCV Image)
@@ -19,6 +17,7 @@ class Chart {
     Parent : PDFDocument
     Grid : Grid
     Threads : Thread[]
+    Chart()
 }
 class Grid {
     ParentImages : OpenCV Image[][]
