@@ -1,0 +1,28 @@
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\bin\Debug\net7.0\PDF to OXS Converter.exe
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\bin\Debug\net7.0\PDF to OXS Converter.deps.json
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\bin\Debug\net7.0\PDF to OXS Converter.runtimeconfig.json
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\bin\Debug\net7.0\PDF to OXS Converter.dll
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\bin\Debug\net7.0\PDF to OXS Converter.pdb
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.AssemblyInfoInputs.cache
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.AssemblyInfo.cs
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.csproj.CoreCompileInputs.cache
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.dll
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\obj\Debug\net7.0\refint\PDF to OXS Converter.dll
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.pdb
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.genruntimeconfig.cache
+C:\Users\samwi\Desktop\Programming\Experiments\c#\PDF to OXS Converter\obj\Debug\net7.0\ref\PDF to OXS Converter.dll
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\bin\Debug\net7.0\PDF to OXS Converter.exe
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\bin\Debug\net7.0\PDF to OXS Converter.deps.json
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\bin\Debug\net7.0\PDF to OXS Converter.runtimeconfig.json
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\bin\Debug\net7.0\PDF to OXS Converter.dll
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\bin\Debug\net7.0\PDF to OXS Converter.pdb
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.AssemblyInfoInputs.cache
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.AssemblyInfo.cs
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.csproj.CoreCompileInputs.cache
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.dll
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\obj\Debug\net7.0\refint\PDF to OXS Converter.dll
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.pdb
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\obj\Debug\net7.0\PDF to OXS Converter.genruntimeconfig.cache
+C:\Users\samwi\Desktop\Programming\Experiments\Cross Stitch PDF to OXS Converter\PDF to OXS Converter\obj\Debug\net7.0\ref\PDF to OXS Converter.dll
