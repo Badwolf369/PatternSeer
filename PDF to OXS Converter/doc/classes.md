@@ -1,49 +1,38 @@
 @startuml
 class Program {
     Chart : Chart
-'    Display : Display
     Main(String[]:args)
 }
-/'
-class Display {
-    -image : OpenCV Image
-    +Display(image:OpenCV Image)
-    +View(self)
-    +Update(self, image:OpenCV Image)
-}
-Display "1" -u-* Program : < Creates
-Display <-u- Program : < Updates '/
 class Chart {
-    -Parent : Rasterized PDF
-    -<o> Grid : Grid
-    -<o> Threads : Thread[]
-    +Chart(parent:Rasterized PDF)
+    -SourceImages : Rasterized PDF
+    -<o> Pattern : ChartPattern
+    -<o> Key : ChartKey
+    +Chart(source:Rasterized PDF)
 }
-class Grid {
-    -ParentImages : OpenCV Image[][]
-    -<o> GridSize : [Integer, Integer]
-    -<o> GridContents : Symbol[][]
-    +Grid(parents: OpenCV Image[][], threads:Thread[])
+class ChartPattern {
+    -SourceImages : OpenCV Image[][]
+    -<o> Size : [Integer, Integer]
+    -<o> Contents : KeySymbol[][]
+    +Grid(parents: OpenCV Image[][], key:ChartKey)
 }
-class Symbol {
-    -Image : OpenCV Image
-    -<o> Thread : Thread = Undefined
-    +Symbol(image:OpenCV Image)
-    +MatchThread(threads:Thread[]):Boolean
+class ChartKey {
+    -SourceImage : OpenCV Image
+    -<o> Symbols : KeySymbol[]
+    +ChartKey(source:OpenCV Image)
+    +MatchSymbol(image:OpenCV Image) : KeySymbol
 }
-class Thread {
-    -TableRow : OpenCV Image
+class KeySymbol {
+    -<o> Image : OpenCV Image
     -<o> ThreadColor : String
-    -<o> SymbolImage : OpenCV Image
     -<o> ThreadCount : Integer = 2
     -<i/o> StitchCount : Integer[0..1]
-    -<o> Brand : String = "DMC"
-    +Thread(tableRow:OpenCV Image)
+    -<o> ThreadBrand : String = "DMC"
+    +KeySymbol(image:OpenCV Image)
 }
 
-Chart "1" -u-* Program : < Creates
-Thread "1..*" -d-* Chart
-Thread "1" <-d- Symbol: < References
-Symbol "1..*" -l-o Grid
-Grid "1" -l-* Chart
+Chart "1" -l-* Program : < Creates
+ChartKey "1..*" -u-* Chart
+ChartPattern "1" -u-* Chart
+KeySymbol "1..*" -l-o ChartPattern
+KeySymbol "1..*" -r-* ChartKey
 @enduml
