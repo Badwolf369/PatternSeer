@@ -1,10 +1,10 @@
 @startuml
 class Program {
     Chart : Chart
-    Display : Display
+'    Display : Display
     Main(String[]:args)
 }
-
+/'
 class Display {
     -image : OpenCV Image
     +Display(image:OpenCV Image)
@@ -12,8 +12,7 @@ class Display {
     +Update(self, image:OpenCV Image)
 }
 Display "1" -u-* Program : < Creates
-Display <-u- Program : < Updates
-
+Display <-u- Program : < Updates '/
 class Chart {
     -Parent : Rasterized PDF
     -<o> Grid : Grid
