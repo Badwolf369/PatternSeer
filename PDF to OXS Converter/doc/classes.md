@@ -1,7 +1,8 @@
 @startuml
-class Main {
+class Program {
     Chart : Chart
     Display : Display
+    Main(String[]:args)
 }
 
 class Display {
@@ -10,8 +11,8 @@ class Display {
     +View(self)
     +Update(self, image:OpenCV Image)
 }
-Display "1" -u-* Main : < Creates
-Display <-u- Main : < Updates
+Display "1" -u-* Program : < Creates
+Display <-u- Program : < Updates
 
 class Chart {
     -Parent : Rasterized PDF
@@ -41,7 +42,7 @@ class Thread {
     +Thread(tableRow:OpenCV Image)
 }
 
-Chart "1" -u-* Main : < Creates
+Chart "1" -u-* Program : < Creates
 Thread "1..*" -d-* Chart
 Thread "1" <-d- Symbol: < References
 Symbol "1..*" -l-o Grid
