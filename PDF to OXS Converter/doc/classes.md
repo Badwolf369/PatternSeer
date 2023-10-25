@@ -13,7 +13,7 @@ class ChartPattern {
     -SourceImages : OpenCV Image[][]
     -<o> Size : [Integer, Integer]
     -<o> Contents : KeySymbol[][]
-    +Grid(parents: OpenCV Image[][], key:ChartKey)
+    +ChartPattern(sourceImages: OpenCV Image[][], key:ChartKey)
 }
 class ChartKey {
     -SourceImage : OpenCV Image
