@@ -10,14 +10,15 @@ class Chart {
     +Chart(source:Rasterized PDF)
 }
 class ChartPattern {
-    -SourceImages : OpenCV Image[][]
-    -<o> Size : [Integer, Integer]
-    -<o> Contents : KeySymbol[][]
-    +ChartPattern(sourceImages: OpenCV Image[][], key:ChartKey)
+    -SourceImages : 2D list of OpenCV Images
+    -<o> Width : Integer > 0
+    -<o> Height : Integer > 0
+    -<o> Grid : 2D List of KeySymbols
+    +ChartPattern(sourceImages: 2D List of OpenCV Images, key:ChartKey)
 }
 class ChartKey {
     -SourceImage : OpenCV Image
-    -<o> Symbols : KeySymbol[]
+    -<o> Symbols : List of KeySymbolss
     +ChartKey(source:OpenCV Image)
     +MatchSymbol(image:OpenCV Image) : KeySymbol
 }
