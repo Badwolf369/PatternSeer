@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sn5PrpMcq1I63SM6c4R0VUdC3wlDAEKhN9HLj501tzYtumIa86qytHYHUNqoE7eEx6abHA07mVwRH3Kbp5ZOyA==",
+  "dgSpecHash": "NJB0ucuNIihYQKA1F9r6YO26cG6Fi2RW7aG4m5l9J2p/lajbExwwxjkwUlyHC51Rn5gNuL6y8rWZc3u/9BeVoQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\Cross Stitch PDF to OXS Converter\\PDF to OXS Converter\\PDF to OXS Converter.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\samwi\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.x86\\19.37.32822\\emgu.runtime.windows.msvc.rt.x86.19.37.32822.nupkg.sha512",
     "C:\\Users\\samwi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
     "C:\\Users\\samwi\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
+    "C:\\Users\\samwi\\.nuget\\packages\\pdfium.net.sdk\\4.87.2704\\pdfium.net.sdk.4.87.2704.nupkg.sha512",
     "C:\\Users\\samwi\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\samwi\\.nuget\\packages\\system.drawing.primitives\\4.3.0\\system.drawing.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\samwi\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",

@@ -48,6 +48,10 @@
             "Emgu.CV.runtime.windows": {
               "target": "Package",
               "version": "[4.8.0.5324, )"
+            },
+            "Pdfium.Net.SDK": {
+              "target": "Package",
+              "version": "[4.87.2704, )"
             }
           },
           "imports": [
