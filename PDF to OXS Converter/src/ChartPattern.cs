@@ -1,18 +1,18 @@
 namespace PDF2OXS {
     class ChartPattern {
         //TODO: Int here shall be replaced with the OpenCV image type
-        private int[][] SourceImages = {0};
+        private List<List<int>> SourceImages;
         private int[] Size = {0, 0};
-        private KeySymbol[][] Contents = {};
+        private List<List<KeySymbol>> Grid;
 
         public int[] getSize() {
             return Size;
         }
         public KeySymbol GetSymbol(int x, int y) {
-            return Contents[y][x];
+            return Grid[y][x];
         }
 
         //TODO: Int here shall be replaced with the OpenCV image type
-        public ChartPattern(int[][] sourceImages, ChartKey key) {}
+        public ChartPattern(List<List<int>> sourceImages, ChartKey key) {}
     }
 }

@@ -1,15 +1,15 @@
 namespace PDF2OXS {
     class ChartKey {
         //TODO: Int here shall be replaced with the OpenCV image type
-        private int[] SourceImages = {};
+        private int SourceImage;
         private KeySymbol[] Symbols = {};
 
-        public KeySymbol getSymbols() {
+        public KeySymbol[] getSymbols() {
             return Symbols;
         }
 
         //TODO: Int here shall be replaced with the OpenCV image type
-        public ChartKey(int SourceImages) {}
+        public ChartKey(int SourceImage) {}
         //TODO: Int here shall be replaced with the OpenCV image type
         public KeySymbol MatchSymbol(int image) {}
     }
