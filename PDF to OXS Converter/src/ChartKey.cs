@@ -11,6 +11,8 @@ namespace PDF2OXS {
         //TODO: Int here shall be replaced with the OpenCV image type
         public ChartKey(int SourceImage) {}
         //TODO: Int here shall be replaced with the OpenCV image type
-        public KeySymbol MatchSymbol(int image) {}
+        public KeySymbol MatchSymbol(int image) {
+            return new KeySymbol(image);
+        }
     }
 }
