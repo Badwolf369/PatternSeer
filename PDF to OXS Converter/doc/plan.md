@@ -1,0 +1,9 @@
+- Import pdf pages as *images*
+- Create the *Chart* from the *images* 
+    - Locate which *images* contain relevent data
+        - Which *images* contain the pattern?
+        - Which *images* contain the list of threads?
+        - Which *images* contain the copyright information?
+        - Which *images* contain chart info such as author, title, size, fabric, etc
+    - Create the *ChartKey* from the images that contain a list of threads
+    - Create the *ChartPattern* from the images that contain the pattern and from the *ChartKey*
