@@ -45,17 +45,13 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "Aspose.PDF": {
-              "target": "Package",
-              "version": "[23.10.0, )"
-            },
             "Emgu.CV.runtime.windows": {
               "target": "Package",
               "version": "[4.8.0.5324, )"
             },
-            "Pdfium.Net.SDK": {
+            "PDFtoImage": {
               "target": "Package",
-              "version": "[4.87.2704, )"
+              "version": "[2.4.2, )"
             }
           },
           "imports": [

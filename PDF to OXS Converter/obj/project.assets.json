@@ -2,26 +2,80 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "Aspose.PDF/23.10.0": {
+      "bblanchon.PDFium.Linux/120.0.6056": {
         "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyModel": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
-          "System.Diagnostics.DiagnosticSource": "7.0.0",
-          "System.Diagnostics.PerformanceCounter": "7.0.0",
-          "System.Drawing.Common": "7.0.0",
-          "System.Security.Cryptography.Pkcs": "7.0.0",
-          "System.Security.Permissions": "7.0.0",
-          "System.Text.Encoding.CodePages": "7.0.0"
-        },
         "compile": {
-          "lib/net7.0/Aspose.PDF.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard1.0/_._": {}
         },
         "runtime": {
-          "lib/net7.0/Aspose.PDF.dll": {
-            "related": ".xml"
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libpdfium.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libpdfium.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-musl-x64/native/libpdfium.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-musl-x86/native/libpdfium.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x86"
+          },
+          "runtimes/linux-x64/native/libpdfium.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x86/native/libpdfium.so": {
+            "assetType": "native",
+            "rid": "linux-x86"
+          }
+        }
+      },
+      "bblanchon.PDFium.macOS/120.0.6056": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/osx-arm64/native/libpdfium.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libpdfium.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          }
+        }
+      },
+      "bblanchon.PDFium.Win32/120.0.6056": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/pdfium.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/pdfium.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/pdfium.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
           }
         }
       },
@@ -182,42 +236,6 @@
           }
         }
       },
-      "Microsoft.Extensions.DependencyModel/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Text.Encodings.Web": "7.0.0",
-          "System.Text.Json": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/Microsoft.Extensions.DependencyModel.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.Extensions.DependencyModel.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
-        }
-      },
       "Microsoft.NETCore.Platforms/1.1.1": {
         "type": "package",
         "compile": {
@@ -236,42 +254,27 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Win32.SystemEvents/7.0.0": {
+      "PDFtoImage/2.4.2": {
         "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.6",
+          "SkiaSharp.NativeAssets.Linux.NoDependencies": "2.88.6",
+          "SkiaSharp.NativeAssets.WebAssembly": "2.88.6",
+          "SkiaSharp.NativeAssets.Win32": "2.88.6",
+          "SkiaSharp.NativeAssets.macOS": "2.88.6",
+          "bblanchon.PDFium.Linux": "120.0.6056",
+          "bblanchon.PDFium.Win32": "120.0.6056",
+          "bblanchon.PDFium.macOS": "120.0.6056"
+        },
         "compile": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net7.0/PDFtoImage.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net7.0/PDFtoImage.dll": {
             "related": ".xml"
           }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "Pdfium.Net.SDK/4.87.2704": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/Patagames.Pdf.dll": {
-            "related": ".deps.json;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Patagames.Pdf.dll": {
-            "related": ".deps.json;.xml"
-          }
-        },
-        "build": {
-          "build/Pdfium.Net.SDK.targets": {}
         }
       },
       "runtime.native.System/4.3.0": {
@@ -287,116 +290,101 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "System.Configuration.ConfigurationManager/7.0.0": {
+      "SkiaSharp/2.88.6": {
         "type": "package",
         "dependencies": {
-          "System.Diagnostics.EventLog": "7.0.0",
-          "System.Security.Cryptography.ProtectedData": "7.0.0",
-          "System.Security.Permissions": "7.0.0"
+          "SkiaSharp.NativeAssets.Win32": "2.88.6",
+          "SkiaSharp.NativeAssets.macOS": "2.88.6"
         },
         "compile": {
-          "lib/net7.0/System.Configuration.ConfigurationManager.dll": {
-            "related": ".xml"
+          "lib/net6.0/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net7.0/System.Configuration.ConfigurationManager.dll": {
-            "related": ".xml"
+          "lib/net6.0/SkiaSharp.dll": {
+            "related": ".pdb;.xml"
           }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/7.0.0": {
+      "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.6": {
         "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.6"
+        },
         "compile": {
-          "lib/net7.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/_._": {}
         },
         "runtime": {
-          "lib/net7.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
-      "System.Diagnostics.EventLog/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/System.Diagnostics.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.Diagnostics.EventLog.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
+          "lib/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.Messages.dll": {
-            "assetType": "runtime",
-            "rid": "win"
+          "runtimes/linux-arm/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
           },
-          "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.dll": {
-            "assetType": "runtime",
-            "rid": "win"
+          "runtimes/linux-arm64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-musl-x64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-x64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
           }
         }
       },
-      "System.Diagnostics.PerformanceCounter/7.0.0": {
+      "SkiaSharp.NativeAssets.macOS/2.88.6": {
         "type": "package",
-        "dependencies": {
-          "System.Configuration.ConfigurationManager": "7.0.0"
-        },
         "compile": {
-          "lib/net7.0/System.Diagnostics.PerformanceCounter.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/_._": {}
         },
         "runtime": {
-          "lib/net7.0/System.Diagnostics.PerformanceCounter.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
+          "lib/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Diagnostics.PerformanceCounter.dll": {
-            "assetType": "runtime",
-            "rid": "win"
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "assetType": "native",
+            "rid": "osx"
           }
         }
       },
-      "System.Drawing.Common/7.0.0": {
+      "SkiaSharp.NativeAssets.WebAssembly/2.88.6": {
         "type": "package",
-        "dependencies": {
-          "Microsoft.Win32.SystemEvents": "7.0.0"
-        },
         "compile": {
-          "lib/net7.0/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard1.0/_._": {}
         },
         "runtime": {
-          "lib/net7.0/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard1.0/_._": {}
         },
         "build": {
-          "buildTransitive/net6.0/_._": {}
+          "buildTransitive/netstandard1.0/SkiaSharp.NativeAssets.WebAssembly.props": {},
+          "buildTransitive/netstandard1.0/SkiaSharp.NativeAssets.WebAssembly.targets": {}
+        }
+      },
+      "SkiaSharp.NativeAssets.Win32/2.88.6": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
-            "assetType": "runtime",
-            "rid": "win"
+          "runtimes/win-arm64/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
           }
         }
       },
@@ -411,22 +399,6 @@
         },
         "runtime": {
           "lib/netstandard1.1/System.Drawing.Primitives.dll": {}
-        }
-      },
-      "System.Formats.Asn1/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/System.Formats.Asn1.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.Formats.Asn1.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
         }
       },
       "System.Globalization/4.3.0": {
@@ -594,72 +566,6 @@
           }
         }
       },
-      "System.Security.Cryptography.Pkcs/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Formats.Asn1": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/System.Security.Cryptography.Pkcs.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.Security.Cryptography.Pkcs.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.Security.Cryptography.ProtectedData/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/System.Security.Cryptography.ProtectedData.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.Security.Cryptography.ProtectedData.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.Security.Permissions/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Windows.Extensions": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/System.Security.Permissions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.Security.Permissions.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        }
-      },
       "System.Text.Encoding/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -670,28 +576,6 @@
         "compile": {
           "ref/netstandard1.3/_._": {
             "related": ".xml"
-          }
-        }
-      },
-      "System.Text.Encoding.CodePages/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Text.Encoding.CodePages.dll": {
-            "assetType": "runtime",
-            "rid": "win"
           }
         }
       },
@@ -763,55 +647,144 @@
             "related": ".xml"
           }
         }
-      },
-      "System.Windows.Extensions/7.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/System.Windows.Extensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/System.Windows.Extensions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Windows.Extensions.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
       }
     }
   },
   "libraries": {
-    "Aspose.PDF/23.10.0": {
-      "sha512": "NVzZd76+eVcI6l5t7T/sQOHzamZF0yCpMrucNwdYEq7SZImUm8av93rTLQsYBDgujdYZ/nUnFcptfBMNXfhFAw==",
+    "bblanchon.PDFium.Linux/120.0.6056": {
+      "sha512": "cefgPD8yOvUD8d0OlhMhHy+l9zkkYne+jdlPpi/BkiH+qOa4Xs3Koz9MTTjMXc8ODpE8o5PIu3pS3hXDQewCbA==",
       "type": "package",
-      "path": "aspose.pdf/23.10.0",
+      "path": "bblanchon.pdfium.linux/120.0.6056",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "aspose.pdf.23.10.0.nupkg.sha512",
-        "aspose.pdf.nuspec",
-        "images/aspose_pdf-for-net.png",
-        "lib/net4.0/Aspose.PDF.dll",
-        "lib/net4.0/Aspose.PDF.xml",
-        "lib/net4.8.1/Aspose.PDF.dll",
-        "lib/net4.8.1/Aspose.PDF.xml",
-        "lib/net6.0/Aspose.PDF.dll",
-        "lib/net6.0/Aspose.PDF.xml",
-        "lib/net7.0/Aspose.PDF.dll",
-        "lib/net7.0/Aspose.PDF.xml",
-        "lib/netstandard2.0/Aspose.PDF.dll",
-        "lib/netstandard2.0/Aspose.PDF.xml",
-        "license/End User License Agreement.html",
-        "license/aspose_end-user-license-agreement.txt",
-        "license/thirdpartylicenses-Aspose.PDF for .NET.txt"
+        "README.md",
+        "bblanchon.pdfium.linux.120.0.6056.nupkg.sha512",
+        "bblanchon.pdfium.linux.nuspec",
+        "build/native/bblanchon.PDFium.Linux.targets",
+        "build/native/include/pdfium/cpp/fpdf_deleters.h",
+        "build/native/include/pdfium/cpp/fpdf_scopers.h",
+        "build/native/include/pdfium/fpdf_annot.h",
+        "build/native/include/pdfium/fpdf_attachment.h",
+        "build/native/include/pdfium/fpdf_catalog.h",
+        "build/native/include/pdfium/fpdf_dataavail.h",
+        "build/native/include/pdfium/fpdf_doc.h",
+        "build/native/include/pdfium/fpdf_edit.h",
+        "build/native/include/pdfium/fpdf_ext.h",
+        "build/native/include/pdfium/fpdf_flatten.h",
+        "build/native/include/pdfium/fpdf_formfill.h",
+        "build/native/include/pdfium/fpdf_fwlevent.h",
+        "build/native/include/pdfium/fpdf_javascript.h",
+        "build/native/include/pdfium/fpdf_ppo.h",
+        "build/native/include/pdfium/fpdf_progressive.h",
+        "build/native/include/pdfium/fpdf_save.h",
+        "build/native/include/pdfium/fpdf_searchex.h",
+        "build/native/include/pdfium/fpdf_signature.h",
+        "build/native/include/pdfium/fpdf_structtree.h",
+        "build/native/include/pdfium/fpdf_sysfontinfo.h",
+        "build/native/include/pdfium/fpdf_text.h",
+        "build/native/include/pdfium/fpdf_thumbnail.h",
+        "build/native/include/pdfium/fpdf_transformpage.h",
+        "build/native/include/pdfium/fpdfview.h",
+        "icon.png",
+        "lib/native/_._",
+        "lib/netstandard1.0/_._",
+        "runtimes/linux-arm/native/libpdfium.so",
+        "runtimes/linux-arm64/native/libpdfium.so",
+        "runtimes/linux-musl-x64/native/libpdfium.so",
+        "runtimes/linux-musl-x86/native/libpdfium.so",
+        "runtimes/linux-x64/native/libpdfium.so",
+        "runtimes/linux-x86/native/libpdfium.so"
+      ]
+    },
+    "bblanchon.PDFium.macOS/120.0.6056": {
+      "sha512": "1b+D4LyGJZ4flsauGIv9Q2cpsyNbM83O8J0AnQ67mE8+cyhQ5GKxqH1Bo81xVswrQUrxON+BbSGYmjCF6r8kiw==",
+      "type": "package",
+      "path": "bblanchon.pdfium.macos/120.0.6056",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "bblanchon.pdfium.macos.120.0.6056.nupkg.sha512",
+        "bblanchon.pdfium.macos.nuspec",
+        "build/native/bblanchon.PDFium.macOS.targets",
+        "build/native/include/pdfium/cpp/fpdf_deleters.h",
+        "build/native/include/pdfium/cpp/fpdf_scopers.h",
+        "build/native/include/pdfium/fpdf_annot.h",
+        "build/native/include/pdfium/fpdf_attachment.h",
+        "build/native/include/pdfium/fpdf_catalog.h",
+        "build/native/include/pdfium/fpdf_dataavail.h",
+        "build/native/include/pdfium/fpdf_doc.h",
+        "build/native/include/pdfium/fpdf_edit.h",
+        "build/native/include/pdfium/fpdf_ext.h",
+        "build/native/include/pdfium/fpdf_flatten.h",
+        "build/native/include/pdfium/fpdf_formfill.h",
+        "build/native/include/pdfium/fpdf_fwlevent.h",
+        "build/native/include/pdfium/fpdf_javascript.h",
+        "build/native/include/pdfium/fpdf_ppo.h",
+        "build/native/include/pdfium/fpdf_progressive.h",
+        "build/native/include/pdfium/fpdf_save.h",
+        "build/native/include/pdfium/fpdf_searchex.h",
+        "build/native/include/pdfium/fpdf_signature.h",
+        "build/native/include/pdfium/fpdf_structtree.h",
+        "build/native/include/pdfium/fpdf_sysfontinfo.h",
+        "build/native/include/pdfium/fpdf_text.h",
+        "build/native/include/pdfium/fpdf_thumbnail.h",
+        "build/native/include/pdfium/fpdf_transformpage.h",
+        "build/native/include/pdfium/fpdfview.h",
+        "icon.png",
+        "lib/native/_._",
+        "lib/netstandard1.0/_._",
+        "runtimes/osx-arm64/native/libpdfium.dylib",
+        "runtimes/osx-x64/native/libpdfium.dylib"
+      ]
+    },
+    "bblanchon.PDFium.Win32/120.0.6056": {
+      "sha512": "6DiESvIsjZDQOT/73LFQ3kCr9vwqjnZH3BTogcWz66meQce1hh9MvFmjyk9EXc1+82jVE4/2eZWlpLDnyegEdw==",
+      "type": "package",
+      "path": "bblanchon.pdfium.win32/120.0.6056",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "bblanchon.pdfium.win32.120.0.6056.nupkg.sha512",
+        "bblanchon.pdfium.win32.nuspec",
+        "build/native/bblanchon.PDFium.Win32.targets",
+        "build/native/include/pdfium/cpp/fpdf_deleters.h",
+        "build/native/include/pdfium/cpp/fpdf_scopers.h",
+        "build/native/include/pdfium/fpdf_annot.h",
+        "build/native/include/pdfium/fpdf_attachment.h",
+        "build/native/include/pdfium/fpdf_catalog.h",
+        "build/native/include/pdfium/fpdf_dataavail.h",
+        "build/native/include/pdfium/fpdf_doc.h",
+        "build/native/include/pdfium/fpdf_edit.h",
+        "build/native/include/pdfium/fpdf_ext.h",
+        "build/native/include/pdfium/fpdf_flatten.h",
+        "build/native/include/pdfium/fpdf_formfill.h",
+        "build/native/include/pdfium/fpdf_fwlevent.h",
+        "build/native/include/pdfium/fpdf_javascript.h",
+        "build/native/include/pdfium/fpdf_ppo.h",
+        "build/native/include/pdfium/fpdf_progressive.h",
+        "build/native/include/pdfium/fpdf_save.h",
+        "build/native/include/pdfium/fpdf_searchex.h",
+        "build/native/include/pdfium/fpdf_signature.h",
+        "build/native/include/pdfium/fpdf_structtree.h",
+        "build/native/include/pdfium/fpdf_sysfontinfo.h",
+        "build/native/include/pdfium/fpdf_text.h",
+        "build/native/include/pdfium/fpdf_thumbnail.h",
+        "build/native/include/pdfium/fpdf_transformpage.h",
+        "build/native/include/pdfium/fpdfview.h",
+        "build/native/lib/win-arm64/pdfium.dll.lib",
+        "build/native/lib/win-x64/pdfium.dll.lib",
+        "build/native/lib/win-x86/pdfium.dll.lib",
+        "build/net461/bblanchon.PDFium.Win32.targets",
+        "buildTransitive/net461/bblanchon.PDFium.Win32.targets",
+        "icon.png",
+        "lib/native/_._",
+        "lib/netstandard2.0/_._",
+        "runtimes/win-arm64/native/pdfium.dll",
+        "runtimes/win-x64/native/pdfium.dll",
+        "runtimes/win-x86/native/pdfium.dll"
       ]
     },
     "Emgu.CV/4.8.0.5324": {
@@ -920,104 +893,6 @@
         "runtimes/win-x86/native/vcruntime140.dll"
       ]
     },
-    "Microsoft.Extensions.DependencyModel/7.0.0": {
-      "sha512": "oONNYd71J3LzkWc4fUHl3SvMfiQMYUCo/mDHDEu76hYYxdhdrPYv6fvGv9nnKVyhE9P0h20AU8RZB5OOWQcAXg==",
-      "type": "package",
-      "path": "microsoft.extensions.dependencymodel/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "README.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/Microsoft.Extensions.DependencyModel.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyModel.targets",
-        "lib/net462/Microsoft.Extensions.DependencyModel.dll",
-        "lib/net462/Microsoft.Extensions.DependencyModel.xml",
-        "lib/net6.0/Microsoft.Extensions.DependencyModel.dll",
-        "lib/net6.0/Microsoft.Extensions.DependencyModel.xml",
-        "lib/net7.0/Microsoft.Extensions.DependencyModel.dll",
-        "lib/net7.0/Microsoft.Extensions.DependencyModel.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.xml",
-        "microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512",
-        "microsoft.extensions.dependencymodel.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
-      "sha512": "kmn78+LPVMOWeITUjIlfxUPDsI0R6G0RkeAMBmQxAJ7vBJn4q2dTva7pWi65ceN5vPGjJ9q/Uae2WKgvfktJAw==",
-      "type": "package",
-      "path": "microsoft.extensions.logging.abstractions/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/roslyn3.11/cs/Microsoft.Extensions.Logging.Generators.dll",
-        "analyzers/dotnet/roslyn3.11/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll",
-        "analyzers/dotnet/roslyn4.0/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll",
-        "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
-        "buildTransitive/net461/Microsoft.Extensions.Logging.Abstractions.targets",
-        "buildTransitive/net462/Microsoft.Extensions.Logging.Abstractions.targets",
-        "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets",
-        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
-        "buildTransitive/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.targets",
-        "lib/net462/Microsoft.Extensions.Logging.Abstractions.dll",
-        "lib/net462/Microsoft.Extensions.Logging.Abstractions.xml",
-        "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll",
-        "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll",
-        "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
-        "microsoft.extensions.logging.abstractions.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "Microsoft.NETCore.Platforms/1.1.1": {
       "sha512": "TMBuzAHpTenGbGgk0SMTwyEkyijY/Eae4ZGsFNYJvAr/LDn1ku3Etp3FPxChmDp5HHF3kzJuoaa08N0xjqAJfQ==",
       "type": "package",
@@ -1048,200 +923,29 @@
         "runtime.json"
       ]
     },
-    "Microsoft.Win32.SystemEvents/7.0.0": {
-      "sha512": "2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
+    "PDFtoImage/2.4.2": {
+      "sha512": "n1Fch0mD9SQnlfWCDF0dhpYcM+dOE5dfe0YEeBkVMPIBDQ9U9S+j5pA2RSKsTAAmX/SNly6Gj954Sc1WjMx+kg==",
       "type": "package",
-      "path": "microsoft.win32.systemevents/7.0.0",
+      "path": "pdftoimage/2.4.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/Microsoft.Win32.SystemEvents.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/Microsoft.Win32.SystemEvents.targets",
-        "lib/net462/Microsoft.Win32.SystemEvents.dll",
-        "lib/net462/Microsoft.Win32.SystemEvents.xml",
-        "lib/net6.0/Microsoft.Win32.SystemEvents.dll",
-        "lib/net6.0/Microsoft.Win32.SystemEvents.xml",
-        "lib/net7.0/Microsoft.Win32.SystemEvents.dll",
-        "lib/net7.0/Microsoft.Win32.SystemEvents.xml",
-        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
-        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
-        "microsoft.win32.systemevents.7.0.0.nupkg.sha512",
-        "microsoft.win32.systemevents.nuspec",
-        "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.xml",
-        "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll",
-        "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.xml",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "Pdfium.Net.SDK/4.87.2704": {
-      "sha512": "/Yrz4K7uA9HK4hbDKor+9GH39SBp04RjwIqsL27RdhTMfRhddWhXuKxvaNKPvYTSusDN4qLYasAsAa7HO/fZ2w==",
-      "type": "package",
-      "path": "pdfium.net.sdk/4.87.2704",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/Pdfium.Net.SDK.targets",
-        "content/Pdf.Net.SDK.licx",
-        "content/icudt.dll",
-        "content/libpdfium.dylib",
-        "content/x64/pdfium.dll",
-        "content/x86/pdfium.dll",
-        "lib/net20/Patagames.Pdf.WinForms.dll",
-        "lib/net20/Patagames.Pdf.WinForms.xml",
-        "lib/net20/Patagames.Pdf.dll",
-        "lib/net20/Patagames.Pdf.xml",
-        "lib/net30/Patagames.Pdf.WinForms.dll",
-        "lib/net30/Patagames.Pdf.WinForms.xml",
-        "lib/net30/Patagames.Pdf.Wpf.dll",
-        "lib/net30/Patagames.Pdf.Wpf.xml",
-        "lib/net30/Patagames.Pdf.dll",
-        "lib/net30/Patagames.Pdf.xml",
-        "lib/net35/Patagames.Pdf.WinForms.dll",
-        "lib/net35/Patagames.Pdf.WinForms.xml",
-        "lib/net35/Patagames.Pdf.Wpf.dll",
-        "lib/net35/Patagames.Pdf.Wpf.xml",
-        "lib/net35/Patagames.Pdf.dll",
-        "lib/net35/Patagames.Pdf.xml",
-        "lib/net40/Patagames.Pdf.WinForms.dll",
-        "lib/net40/Patagames.Pdf.WinForms.xml",
-        "lib/net40/Patagames.Pdf.Wpf.dll",
-        "lib/net40/Patagames.Pdf.Wpf.xml",
-        "lib/net40/Patagames.Pdf.dll",
-        "lib/net40/Patagames.Pdf.xml",
-        "lib/net45/Patagames.Pdf.WinForms.dll",
-        "lib/net45/Patagames.Pdf.WinForms.xml",
-        "lib/net45/Patagames.Pdf.Wpf.dll",
-        "lib/net45/Patagames.Pdf.Wpf.xml",
-        "lib/net45/Patagames.Pdf.dll",
-        "lib/net45/Patagames.Pdf.xml",
-        "lib/net451/Patagames.Pdf.WinForms.dll",
-        "lib/net451/Patagames.Pdf.WinForms.xml",
-        "lib/net451/Patagames.Pdf.Wpf.dll",
-        "lib/net451/Patagames.Pdf.Wpf.xml",
-        "lib/net451/Patagames.Pdf.dll",
-        "lib/net451/Patagames.Pdf.xml",
-        "lib/net452/Patagames.Pdf.WinForms.dll",
-        "lib/net452/Patagames.Pdf.WinForms.xml",
-        "lib/net452/Patagames.Pdf.Wpf.dll",
-        "lib/net452/Patagames.Pdf.Wpf.xml",
-        "lib/net452/Patagames.Pdf.dll",
-        "lib/net452/Patagames.Pdf.xml",
-        "lib/net46/Patagames.Pdf.WinForms.dll",
-        "lib/net46/Patagames.Pdf.WinForms.xml",
-        "lib/net46/Patagames.Pdf.Wpf.dll",
-        "lib/net46/Patagames.Pdf.Wpf.xml",
-        "lib/net46/Patagames.Pdf.dll",
-        "lib/net46/Patagames.Pdf.xml",
-        "lib/net461/Patagames.Pdf.WinForms.dll",
-        "lib/net461/Patagames.Pdf.WinForms.xml",
-        "lib/net461/Patagames.Pdf.Wpf.dll",
-        "lib/net461/Patagames.Pdf.Wpf.xml",
-        "lib/net461/Patagames.Pdf.dll",
-        "lib/net461/Patagames.Pdf.xml",
-        "lib/net462/Patagames.Pdf.WinForms.dll",
-        "lib/net462/Patagames.Pdf.WinForms.xml",
-        "lib/net462/Patagames.Pdf.Wpf.dll",
-        "lib/net462/Patagames.Pdf.Wpf.xml",
-        "lib/net462/Patagames.Pdf.dll",
-        "lib/net462/Patagames.Pdf.xml",
-        "lib/net47/Patagames.Pdf.WinForms.dll",
-        "lib/net47/Patagames.Pdf.WinForms.xml",
-        "lib/net47/Patagames.Pdf.Wpf.dll",
-        "lib/net47/Patagames.Pdf.Wpf.xml",
-        "lib/net47/Patagames.Pdf.dll",
-        "lib/net47/Patagames.Pdf.xml",
-        "lib/net471/Patagames.Pdf.WinForms.dll",
-        "lib/net471/Patagames.Pdf.WinForms.xml",
-        "lib/net471/Patagames.Pdf.Wpf.dll",
-        "lib/net471/Patagames.Pdf.Wpf.xml",
-        "lib/net471/Patagames.Pdf.dll",
-        "lib/net471/Patagames.Pdf.xml",
-        "lib/net472/Patagames.Pdf.WinForms.dll",
-        "lib/net472/Patagames.Pdf.WinForms.xml",
-        "lib/net472/Patagames.Pdf.Wpf.dll",
-        "lib/net472/Patagames.Pdf.Wpf.xml",
-        "lib/net472/Patagames.Pdf.dll",
-        "lib/net472/Patagames.Pdf.xml",
-        "lib/net48/Patagames.Pdf.WinForms.dll",
-        "lib/net48/Patagames.Pdf.WinForms.xml",
-        "lib/net48/Patagames.Pdf.Wpf.dll",
-        "lib/net48/Patagames.Pdf.Wpf.xml",
-        "lib/net48/Patagames.Pdf.dll",
-        "lib/net48/Patagames.Pdf.xml",
-        "lib/net5.0-windows/Patagames.Pdf.Gdi.deps.json",
-        "lib/net5.0-windows/Patagames.Pdf.Gdi.dll",
-        "lib/net5.0-windows/Patagames.Pdf.Gdi.xml",
-        "lib/net5.0-windows/Patagames.Pdf.WinForms.deps.json",
-        "lib/net5.0-windows/Patagames.Pdf.WinForms.dll",
-        "lib/net5.0-windows/Patagames.Pdf.WinForms.xml",
-        "lib/net5.0-windows/Patagames.Pdf.Wpf.deps.json",
-        "lib/net5.0-windows/Patagames.Pdf.Wpf.dll",
-        "lib/net5.0-windows/Patagames.Pdf.Wpf.xml",
-        "lib/net5.0-windows/Patagames.Pdf.deps.json",
-        "lib/net5.0-windows/Patagames.Pdf.dll",
-        "lib/net5.0-windows/Patagames.Pdf.xml",
-        "lib/net5.0/Patagames.Pdf.deps.json",
-        "lib/net5.0/Patagames.Pdf.dll",
-        "lib/net5.0/Patagames.Pdf.xml",
-        "lib/net6.0-windows/Patagames.Pdf.Gdi.deps.json",
-        "lib/net6.0-windows/Patagames.Pdf.Gdi.dll",
-        "lib/net6.0-windows/Patagames.Pdf.Gdi.xml",
-        "lib/net6.0-windows/Patagames.Pdf.WinForms.deps.json",
-        "lib/net6.0-windows/Patagames.Pdf.WinForms.dll",
-        "lib/net6.0-windows/Patagames.Pdf.WinForms.xml",
-        "lib/net6.0-windows/Patagames.Pdf.Wpf.deps.json",
-        "lib/net6.0-windows/Patagames.Pdf.Wpf.dll",
-        "lib/net6.0-windows/Patagames.Pdf.Wpf.xml",
-        "lib/net6.0-windows/Patagames.Pdf.deps.json",
-        "lib/net6.0-windows/Patagames.Pdf.dll",
-        "lib/net6.0-windows/Patagames.Pdf.xml",
-        "lib/net6.0/Patagames.Pdf.deps.json",
-        "lib/net6.0/Patagames.Pdf.dll",
-        "lib/net6.0/Patagames.Pdf.xml",
-        "lib/net7.0-windows/Patagames.Pdf.Gdi.deps.json",
-        "lib/net7.0-windows/Patagames.Pdf.Gdi.dll",
-        "lib/net7.0-windows/Patagames.Pdf.Gdi.xml",
-        "lib/net7.0-windows/Patagames.Pdf.WinForms.deps.json",
-        "lib/net7.0-windows/Patagames.Pdf.WinForms.dll",
-        "lib/net7.0-windows/Patagames.Pdf.WinForms.xml",
-        "lib/net7.0-windows/Patagames.Pdf.Wpf.deps.json",
-        "lib/net7.0-windows/Patagames.Pdf.Wpf.dll",
-        "lib/net7.0-windows/Patagames.Pdf.Wpf.xml",
-        "lib/net7.0-windows/Patagames.Pdf.deps.json",
-        "lib/net7.0-windows/Patagames.Pdf.dll",
-        "lib/net7.0-windows/Patagames.Pdf.xml",
-        "lib/net7.0/Patagames.Pdf.deps.json",
-        "lib/net7.0/Patagames.Pdf.dll",
-        "lib/net7.0/Patagames.Pdf.xml",
-        "lib/netstandard2.0/Patagames.Pdf.Gdi.deps.json",
-        "lib/netstandard2.0/Patagames.Pdf.Gdi.dll",
-        "lib/netstandard2.0/Patagames.Pdf.Gdi.xml",
-        "lib/netstandard2.0/Patagames.Pdf.deps.json",
-        "lib/netstandard2.0/Patagames.Pdf.dll",
-        "lib/netstandard2.0/Patagames.Pdf.xml",
-        "lib/netstandard2.1/Patagames.Pdf.Gdi.deps.json",
-        "lib/netstandard2.1/Patagames.Pdf.Gdi.dll",
-        "lib/netstandard2.1/Patagames.Pdf.Gdi.xml",
-        "lib/netstandard2.1/Patagames.Pdf.deps.json",
-        "lib/netstandard2.1/Patagames.Pdf.dll",
-        "lib/netstandard2.1/Patagames.Pdf.xml",
-        "lib/uap10.0/Beta Notice.txt",
-        "lib/uap10.0/Patagames.Pdf.XML",
-        "lib/uap10.0/Patagames.Pdf.dll",
-        "license.md",
-        "pdfium.net.sdk.4.87.2704.nupkg.sha512",
-        "pdfium.net.sdk.nuspec",
-        "tools/Pdf.Net SDK Activation/Patagames.Pdf.dll",
-        "tools/Pdf.Net SDK Activation/Pdf.Net SDK Activation.exe",
-        "tools/Pdf.Net SDK Activation/Pdf.Net SDK Activation.exe.config",
-        "tools/install.ps1"
+        "Icon_128.png",
+        "README.md",
+        "lib/monoandroid10.0/PDFtoImage.dll",
+        "lib/monoandroid10.0/PDFtoImage.xml",
+        "lib/net462/PDFtoImage.dll",
+        "lib/net462/PDFtoImage.xml",
+        "lib/net481/PDFtoImage.dll",
+        "lib/net481/PDFtoImage.xml",
+        "lib/net6.0/PDFtoImage.dll",
+        "lib/net6.0/PDFtoImage.xml",
+        "lib/net7.0-android33.0/PDFtoImage.dll",
+        "lib/net7.0-android33.0/PDFtoImage.xml",
+        "lib/net7.0/PDFtoImage.dll",
+        "lib/net7.0/PDFtoImage.xml",
+        "pdftoimage.2.4.2.nupkg.sha512",
+        "pdftoimage.nuspec"
       ]
     },
     "runtime.native.System/4.3.0": {
@@ -1258,159 +962,178 @@
         "runtime.native.system.nuspec"
       ]
     },
-    "System.Configuration.ConfigurationManager/7.0.0": {
-      "sha512": "WvRUdlL1lB0dTRZSs5XcQOd5q9MYNk90GkbmRmiCvRHThWiojkpGqWdmEDJdXyHbxG/BhE5hmVbMfRLXW9FJVA==",
+    "SkiaSharp/2.88.6": {
+      "sha512": "wdfeBAQrEQCbJIRgAiargzP1Uy+0grZiG4CSgBnhAgcJTsPzlifIaO73JRdwIlT3TyBoeU9jEqzwFUhl4hTYnQ==",
       "type": "package",
-      "path": "system.configuration.configurationmanager/7.0.0",
+      "path": "skiasharp/2.88.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Configuration.ConfigurationManager.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Configuration.ConfigurationManager.targets",
-        "lib/net462/System.Configuration.ConfigurationManager.dll",
-        "lib/net462/System.Configuration.ConfigurationManager.xml",
-        "lib/net6.0/System.Configuration.ConfigurationManager.dll",
-        "lib/net6.0/System.Configuration.ConfigurationManager.xml",
-        "lib/net7.0/System.Configuration.ConfigurationManager.dll",
-        "lib/net7.0/System.Configuration.ConfigurationManager.xml",
-        "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
-        "lib/netstandard2.0/System.Configuration.ConfigurationManager.xml",
-        "system.configuration.configurationmanager.7.0.0.nupkg.sha512",
-        "system.configuration.configurationmanager.nuspec",
-        "useSharedDesignerContext.txt"
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "interactive-extensions/dotnet/SkiaSharp.DotNet.Interactive.dll",
+        "lib/monoandroid1.0/SkiaSharp.dll",
+        "lib/monoandroid1.0/SkiaSharp.pdb",
+        "lib/monoandroid1.0/SkiaSharp.xml",
+        "lib/net462/SkiaSharp.dll",
+        "lib/net462/SkiaSharp.pdb",
+        "lib/net462/SkiaSharp.xml",
+        "lib/net6.0-android30.0/SkiaSharp.dll",
+        "lib/net6.0-android30.0/SkiaSharp.pdb",
+        "lib/net6.0-android30.0/SkiaSharp.xml",
+        "lib/net6.0-ios13.6/SkiaSharp.dll",
+        "lib/net6.0-ios13.6/SkiaSharp.pdb",
+        "lib/net6.0-ios13.6/SkiaSharp.xml",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.dll",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.pdb",
+        "lib/net6.0-maccatalyst13.5/SkiaSharp.xml",
+        "lib/net6.0-macos10.15/SkiaSharp.dll",
+        "lib/net6.0-macos10.15/SkiaSharp.pdb",
+        "lib/net6.0-macos10.15/SkiaSharp.xml",
+        "lib/net6.0-tizen7.0/SkiaSharp.dll",
+        "lib/net6.0-tizen7.0/SkiaSharp.pdb",
+        "lib/net6.0-tizen7.0/SkiaSharp.xml",
+        "lib/net6.0-tvos13.4/SkiaSharp.dll",
+        "lib/net6.0-tvos13.4/SkiaSharp.pdb",
+        "lib/net6.0-tvos13.4/SkiaSharp.xml",
+        "lib/net6.0/SkiaSharp.dll",
+        "lib/net6.0/SkiaSharp.pdb",
+        "lib/net6.0/SkiaSharp.xml",
+        "lib/netcoreapp3.1/SkiaSharp.dll",
+        "lib/netcoreapp3.1/SkiaSharp.pdb",
+        "lib/netcoreapp3.1/SkiaSharp.xml",
+        "lib/netstandard1.3/SkiaSharp.dll",
+        "lib/netstandard1.3/SkiaSharp.pdb",
+        "lib/netstandard1.3/SkiaSharp.xml",
+        "lib/netstandard2.0/SkiaSharp.dll",
+        "lib/netstandard2.0/SkiaSharp.pdb",
+        "lib/netstandard2.0/SkiaSharp.xml",
+        "lib/netstandard2.1/SkiaSharp.dll",
+        "lib/netstandard2.1/SkiaSharp.pdb",
+        "lib/netstandard2.1/SkiaSharp.xml",
+        "lib/tizen40/SkiaSharp.dll",
+        "lib/tizen40/SkiaSharp.pdb",
+        "lib/tizen40/SkiaSharp.xml",
+        "lib/uap10.0.10240/SkiaSharp.dll",
+        "lib/uap10.0.10240/SkiaSharp.pdb",
+        "lib/uap10.0.10240/SkiaSharp.xml",
+        "lib/uap10.0.16299/SkiaSharp.dll",
+        "lib/uap10.0.16299/SkiaSharp.pdb",
+        "lib/uap10.0.16299/SkiaSharp.xml",
+        "lib/xamarinios1.0/SkiaSharp.dll",
+        "lib/xamarinios1.0/SkiaSharp.pdb",
+        "lib/xamarinios1.0/SkiaSharp.xml",
+        "lib/xamarinmac2.0/SkiaSharp.dll",
+        "lib/xamarinmac2.0/SkiaSharp.pdb",
+        "lib/xamarinmac2.0/SkiaSharp.xml",
+        "lib/xamarintvos1.0/SkiaSharp.dll",
+        "lib/xamarintvos1.0/SkiaSharp.pdb",
+        "lib/xamarintvos1.0/SkiaSharp.xml",
+        "lib/xamarinwatchos1.0/SkiaSharp.dll",
+        "lib/xamarinwatchos1.0/SkiaSharp.pdb",
+        "lib/xamarinwatchos1.0/SkiaSharp.xml",
+        "skiasharp.2.88.6.nupkg.sha512",
+        "skiasharp.nuspec"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/7.0.0": {
-      "sha512": "9W0ewWDuAyDqS2PigdTxk6jDKonfgscY/hP8hm7VpxYhNHZHKvZTdRckberlFk3VnCmr3xBUyMBut12Q+T2aOw==",
+    "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.6": {
+      "sha512": "ecgMclPor+X1wi2dZSVDo1sV2Dm8gwEKNRtS+qiE9qfnQzGHbYWlbTBWalnZBaIl3BLC21b1QO8gMgabhSAh+g==",
       "type": "package",
-      "path": "system.diagnostics.diagnosticsource/7.0.0",
+      "path": "skiasharp.nativeassets.linux.nodependencies/2.88.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Diagnostics.DiagnosticSource.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Diagnostics.DiagnosticSource.targets",
-        "lib/net462/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net462/System.Diagnostics.DiagnosticSource.xml",
-        "lib/net6.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net6.0/System.Diagnostics.DiagnosticSource.xml",
-        "lib/net7.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/net7.0/System.Diagnostics.DiagnosticSource.xml",
-        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
-        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.7.0.0.nupkg.sha512",
-        "system.diagnostics.diagnosticsource.nuspec",
-        "useSharedDesignerContext.txt"
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net462/SkiaSharp.NativeAssets.Linux.NoDependencies.targets",
+        "buildTransitive/net462/SkiaSharp.NativeAssets.Linux.NoDependencies.targets",
+        "lib/net462/_._",
+        "lib/net6.0/_._",
+        "lib/netcoreapp3.1/_._",
+        "lib/netstandard1.3/_._",
+        "runtimes/linux-arm/native/libSkiaSharp.so",
+        "runtimes/linux-arm64/native/libSkiaSharp.so",
+        "runtimes/linux-musl-x64/native/libSkiaSharp.so",
+        "runtimes/linux-x64/native/libSkiaSharp.so",
+        "skiasharp.nativeassets.linux.nodependencies.2.88.6.nupkg.sha512",
+        "skiasharp.nativeassets.linux.nodependencies.nuspec"
       ]
     },
-    "System.Diagnostics.EventLog/7.0.0": {
-      "sha512": "eUDP47obqQm3SFJfP6z+Fx2nJ4KKTQbXB4Q9Uesnzw9SbYdhjyoGXuvDn/gEmFY6N5Z3bFFbpAQGA7m6hrYJCw==",
+    "SkiaSharp.NativeAssets.macOS/2.88.6": {
+      "sha512": "Sko9LFxRXSjb3OGh5/RxrVRXxYo48tr5NKuuSy6jB85GrYt8WRqVY1iLOLwtjPiVAt4cp+pyD4i30azanS64dw==",
       "type": "package",
-      "path": "system.diagnostics.eventlog/7.0.0",
+      "path": "skiasharp.nativeassets.macos/2.88.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Diagnostics.EventLog.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Diagnostics.EventLog.targets",
-        "lib/net462/System.Diagnostics.EventLog.dll",
-        "lib/net462/System.Diagnostics.EventLog.xml",
-        "lib/net6.0/System.Diagnostics.EventLog.dll",
-        "lib/net6.0/System.Diagnostics.EventLog.xml",
-        "lib/net7.0/System.Diagnostics.EventLog.dll",
-        "lib/net7.0/System.Diagnostics.EventLog.xml",
-        "lib/netstandard2.0/System.Diagnostics.EventLog.dll",
-        "lib/netstandard2.0/System.Diagnostics.EventLog.xml",
-        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll",
-        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll",
-        "runtimes/win/lib/net6.0/System.Diagnostics.EventLog.xml",
-        "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.Messages.dll",
-        "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.dll",
-        "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.xml",
-        "system.diagnostics.eventlog.7.0.0.nupkg.sha512",
-        "system.diagnostics.eventlog.nuspec",
-        "useSharedDesignerContext.txt"
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net462/SkiaSharp.NativeAssets.macOS.targets",
+        "build/net6.0-macos10.15/SkiaSharp.NativeAssets.macOS.targets",
+        "build/xamarinmac2.0/SkiaSharp.NativeAssets.macOS.targets",
+        "buildTransitive/net462/SkiaSharp.NativeAssets.macOS.targets",
+        "buildTransitive/net6.0-macos10.15/SkiaSharp.NativeAssets.macOS.targets",
+        "buildTransitive/xamarinmac2.0/SkiaSharp.NativeAssets.macOS.targets",
+        "lib/net462/_._",
+        "lib/net6.0-macos10.15/_._",
+        "lib/net6.0/_._",
+        "lib/netcoreapp3.1/_._",
+        "lib/netstandard1.3/_._",
+        "lib/xamarinmac2.0/_._",
+        "runtimes/osx/native/libSkiaSharp.dylib",
+        "skiasharp.nativeassets.macos.2.88.6.nupkg.sha512",
+        "skiasharp.nativeassets.macos.nuspec"
       ]
     },
-    "System.Diagnostics.PerformanceCounter/7.0.0": {
-      "sha512": "L+zIMEaXp1vA4wZk1KLMpk6tvU0xy94R0IfmhkmTWeC4KwShsmAfbg5I19LgjsCTYp6GVdXZ2aHluVWL0QqBdA==",
+    "SkiaSharp.NativeAssets.WebAssembly/2.88.6": {
+      "sha512": "pye92IhbHq3uqxrU/I+LdkIRAyWfiUNeJ5IIAmYWt2DQPOU44Uh1nTIcjQ2ghRIFWq62VVUJJy5saLBcQO5zyw==",
       "type": "package",
-      "path": "system.diagnostics.performancecounter/7.0.0",
+      "path": "skiasharp.nativeassets.webassembly/2.88.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Diagnostics.PerformanceCounter.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Diagnostics.PerformanceCounter.targets",
-        "lib/net462/System.Diagnostics.PerformanceCounter.dll",
-        "lib/net462/System.Diagnostics.PerformanceCounter.xml",
-        "lib/net6.0/System.Diagnostics.PerformanceCounter.dll",
-        "lib/net6.0/System.Diagnostics.PerformanceCounter.xml",
-        "lib/net7.0/System.Diagnostics.PerformanceCounter.dll",
-        "lib/net7.0/System.Diagnostics.PerformanceCounter.xml",
-        "lib/netstandard2.0/System.Diagnostics.PerformanceCounter.dll",
-        "lib/netstandard2.0/System.Diagnostics.PerformanceCounter.xml",
-        "runtimes/win/lib/net6.0/System.Diagnostics.PerformanceCounter.dll",
-        "runtimes/win/lib/net6.0/System.Diagnostics.PerformanceCounter.xml",
-        "runtimes/win/lib/net7.0/System.Diagnostics.PerformanceCounter.dll",
-        "runtimes/win/lib/net7.0/System.Diagnostics.PerformanceCounter.xml",
-        "system.diagnostics.performancecounter.7.0.0.nupkg.sha512",
-        "system.diagnostics.performancecounter.nuspec",
-        "useSharedDesignerContext.txt"
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/netstandard1.0/SkiaSharp.NativeAssets.WebAssembly.props",
+        "build/netstandard1.0/SkiaSharp.NativeAssets.WebAssembly.targets",
+        "build/netstandard1.0/libSkiaSharp.a/2.0.23/libSkiaSharp.a",
+        "build/netstandard1.0/libSkiaSharp.a/2.0.6/libSkiaSharp.a",
+        "build/netstandard1.0/libSkiaSharp.a/3.1.12/mt,simd/libSkiaSharp.a",
+        "build/netstandard1.0/libSkiaSharp.a/3.1.12/mt/libSkiaSharp.a",
+        "build/netstandard1.0/libSkiaSharp.a/3.1.12/simd/libSkiaSharp.a",
+        "build/netstandard1.0/libSkiaSharp.a/3.1.12/st/libSkiaSharp.a",
+        "build/netstandard1.0/libSkiaSharp.a/3.1.34/mt/libSkiaSharp.a",
+        "build/netstandard1.0/libSkiaSharp.a/3.1.34/simd,mt/libSkiaSharp.a",
+        "build/netstandard1.0/libSkiaSharp.a/3.1.34/simd,st/libSkiaSharp.a",
+        "build/netstandard1.0/libSkiaSharp.a/3.1.34/st/libSkiaSharp.a",
+        "build/netstandard1.0/libSkiaSharp.a/3.1.7/libSkiaSharp.a",
+        "buildTransitive/netstandard1.0/SkiaSharp.NativeAssets.WebAssembly.props",
+        "buildTransitive/netstandard1.0/SkiaSharp.NativeAssets.WebAssembly.targets",
+        "lib/netstandard1.0/_._",
+        "skiasharp.nativeassets.webassembly.2.88.6.nupkg.sha512",
+        "skiasharp.nativeassets.webassembly.nuspec"
       ]
     },
-    "System.Drawing.Common/7.0.0": {
-      "sha512": "KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
+    "SkiaSharp.NativeAssets.Win32/2.88.6": {
+      "sha512": "7TzFO0u/g2MpQsTty4fyCDdMcfcWI+aLswwfnYXr3gtNS6VLKdMXPMeKpJa3pJSLnUBN6wD0JjuCe8OoLBQ6cQ==",
       "type": "package",
-      "path": "system.drawing.common/7.0.0",
+      "path": "skiasharp.nativeassets.win32/2.88.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Drawing.Common.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Drawing.Common.targets",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net462/System.Drawing.Common.dll",
-        "lib/net462/System.Drawing.Common.xml",
-        "lib/net6.0/System.Drawing.Common.dll",
-        "lib/net6.0/System.Drawing.Common.xml",
-        "lib/net7.0/System.Drawing.Common.dll",
-        "lib/net7.0/System.Drawing.Common.xml",
-        "lib/netstandard2.0/System.Drawing.Common.dll",
-        "lib/netstandard2.0/System.Drawing.Common.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/net6.0/System.Drawing.Common.xml",
-        "runtimes/win/lib/net7.0/System.Drawing.Common.dll",
-        "runtimes/win/lib/net7.0/System.Drawing.Common.xml",
-        "system.drawing.common.7.0.0.nupkg.sha512",
-        "system.drawing.common.nuspec",
-        "useSharedDesignerContext.txt"
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net462/SkiaSharp.NativeAssets.Win32.targets",
+        "buildTransitive/net462/SkiaSharp.NativeAssets.Win32.targets",
+        "lib/net462/_._",
+        "lib/net6.0/_._",
+        "lib/netcoreapp3.1/_._",
+        "lib/netstandard1.3/_._",
+        "runtimes/win-arm64/native/libSkiaSharp.dll",
+        "runtimes/win-x64/native/libSkiaSharp.dll",
+        "runtimes/win-x86/native/libSkiaSharp.dll",
+        "skiasharp.nativeassets.win32.2.88.6.nupkg.sha512",
+        "skiasharp.nativeassets.win32.nuspec"
       ]
     },
     "System.Drawing.Primitives/4.3.0": {
@@ -1440,33 +1163,6 @@
         "ref/xamarinwatchos10/_._",
         "system.drawing.primitives.4.3.0.nupkg.sha512",
         "system.drawing.primitives.nuspec"
-      ]
-    },
-    "System.Formats.Asn1/7.0.0": {
-      "sha512": "+nfpV0afLmvJW8+pLlHxRjz3oZJw4fkyU9MMEaMhCsHi/SN9bGF9q79ROubDiwTiCHezmK0uCWkPP7tGFP/4yg==",
-      "type": "package",
-      "path": "system.formats.asn1/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Formats.Asn1.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Formats.Asn1.targets",
-        "lib/net462/System.Formats.Asn1.dll",
-        "lib/net462/System.Formats.Asn1.xml",
-        "lib/net6.0/System.Formats.Asn1.dll",
-        "lib/net6.0/System.Formats.Asn1.xml",
-        "lib/net7.0/System.Formats.Asn1.dll",
-        "lib/net7.0/System.Formats.Asn1.xml",
-        "lib/netstandard2.0/System.Formats.Asn1.dll",
-        "lib/netstandard2.0/System.Formats.Asn1.xml",
-        "system.formats.asn1.7.0.0.nupkg.sha512",
-        "system.formats.asn1.nuspec",
-        "useSharedDesignerContext.txt"
       ]
     },
     "System.Globalization/4.3.0": {
@@ -2209,103 +1905,6 @@
         "system.runtime.interopservices.runtimeinformation.nuspec"
       ]
     },
-    "System.Security.Cryptography.Pkcs/7.0.0": {
-      "sha512": "mjUbEXkR6DYRef6dnEYKdfec9otcAkibExL+1f9hmbGlWIUyaCnS3Y3oGZEet38waXmuY1ORE8vgv4sgD5nMYg==",
-      "type": "package",
-      "path": "system.security.cryptography.pkcs/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
-        "lib/net462/System.Security.Cryptography.Pkcs.dll",
-        "lib/net462/System.Security.Cryptography.Pkcs.xml",
-        "lib/net6.0/System.Security.Cryptography.Pkcs.dll",
-        "lib/net6.0/System.Security.Cryptography.Pkcs.xml",
-        "lib/net7.0/System.Security.Cryptography.Pkcs.dll",
-        "lib/net7.0/System.Security.Cryptography.Pkcs.xml",
-        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.dll",
-        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
-        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
-        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
-        "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll",
-        "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.xml",
-        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll",
-        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.xml",
-        "system.security.cryptography.pkcs.7.0.0.nupkg.sha512",
-        "system.security.cryptography.pkcs.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Security.Cryptography.ProtectedData/7.0.0": {
-      "sha512": "xSPiLNlHT6wAHtugASbKAJwV5GVqQK351crnILAucUioFqqieDN79evO1rku1ckt/GfjIn+b17UaSskoY03JuA==",
-      "type": "package",
-      "path": "system.security.cryptography.protecteddata/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Security.Cryptography.ProtectedData.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.ProtectedData.targets",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net462/System.Security.Cryptography.ProtectedData.dll",
-        "lib/net462/System.Security.Cryptography.ProtectedData.xml",
-        "lib/net6.0/System.Security.Cryptography.ProtectedData.dll",
-        "lib/net6.0/System.Security.Cryptography.ProtectedData.xml",
-        "lib/net7.0/System.Security.Cryptography.ProtectedData.dll",
-        "lib/net7.0/System.Security.Cryptography.ProtectedData.xml",
-        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
-        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll",
-        "runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.xml",
-        "runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll",
-        "runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.xml",
-        "system.security.cryptography.protecteddata.7.0.0.nupkg.sha512",
-        "system.security.cryptography.protecteddata.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Security.Permissions/7.0.0": {
-      "sha512": "Vmp0iRmCEno9BWiskOW5pxJ3d9n+jUqKxvX4GhLwFhnQaySZmBN2FuC0N5gjFHgyFMUjC5sfIJ8KZfoJwkcMmA==",
-      "type": "package",
-      "path": "system.security.permissions/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Security.Permissions.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Security.Permissions.targets",
-        "lib/net462/System.Security.Permissions.dll",
-        "lib/net462/System.Security.Permissions.xml",
-        "lib/net6.0/System.Security.Permissions.dll",
-        "lib/net6.0/System.Security.Permissions.xml",
-        "lib/net7.0/System.Security.Permissions.dll",
-        "lib/net7.0/System.Security.Permissions.xml",
-        "lib/netstandard2.0/System.Security.Permissions.dll",
-        "lib/netstandard2.0/System.Security.Permissions.xml",
-        "system.security.permissions.7.0.0.nupkg.sha512",
-        "system.security.permissions.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "System.Text.Encoding/4.3.0": {
       "sha512": "BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
       "type": "package",
@@ -2372,43 +1971,6 @@
         "ref/xamarinwatchos10/_._",
         "system.text.encoding.4.3.0.nupkg.sha512",
         "system.text.encoding.nuspec"
-      ]
-    },
-    "System.Text.Encoding.CodePages/7.0.0": {
-      "sha512": "LSyCblMpvOe0N3E+8e0skHcrIhgV2huaNcjUUEa8hRtgEAm36aGkRoC8Jxlb6Ra6GSfF29ftduPNywin8XolzQ==",
-      "type": "package",
-      "path": "system.text.encoding.codepages/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Text.Encoding.CodePages.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Text.Encoding.CodePages.targets",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net462/System.Text.Encoding.CodePages.dll",
-        "lib/net462/System.Text.Encoding.CodePages.xml",
-        "lib/net6.0/System.Text.Encoding.CodePages.dll",
-        "lib/net6.0/System.Text.Encoding.CodePages.xml",
-        "lib/net7.0/System.Text.Encoding.CodePages.dll",
-        "lib/net7.0/System.Text.Encoding.CodePages.xml",
-        "lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
-        "lib/netstandard2.0/System.Text.Encoding.CodePages.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll",
-        "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.xml",
-        "runtimes/win/lib/net7.0/System.Text.Encoding.CodePages.dll",
-        "runtimes/win/lib/net7.0/System.Text.Encoding.CodePages.xml",
-        "system.text.encoding.codepages.7.0.0.nupkg.sha512",
-        "system.text.encoding.codepages.nuspec",
-        "useSharedDesignerContext.txt"
       ]
     },
     "System.Text.Encodings.Web/7.0.0": {
@@ -2651,36 +2213,12 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
-    },
-    "System.Windows.Extensions/7.0.0": {
-      "sha512": "bR4qdCmssMMbo9Fatci49An5B1UaVJZHKNq70PRgzoLYIlitb8Tj7ns/Xt5Pz1CkERiTjcVBDU2y1AVrPBYkaw==",
-      "type": "package",
-      "path": "system.windows.extensions/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net6.0/System.Windows.Extensions.dll",
-        "lib/net6.0/System.Windows.Extensions.xml",
-        "lib/net7.0/System.Windows.Extensions.dll",
-        "lib/net7.0/System.Windows.Extensions.xml",
-        "runtimes/win/lib/net6.0/System.Windows.Extensions.dll",
-        "runtimes/win/lib/net6.0/System.Windows.Extensions.xml",
-        "runtimes/win/lib/net7.0/System.Windows.Extensions.dll",
-        "runtimes/win/lib/net7.0/System.Windows.Extensions.xml",
-        "system.windows.extensions.7.0.0.nupkg.sha512",
-        "system.windows.extensions.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Aspose.PDF >= 23.10.0",
       "Emgu.CV.runtime.windows >= 4.8.0.5324",
-      "Pdfium.Net.SDK >= 4.87.2704"
+      "PDFtoImage >= 2.4.2"
     ]
   },
   "packageFolders": {
@@ -2728,17 +2266,13 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
-          "Aspose.PDF": {
-            "target": "Package",
-            "version": "[23.10.0, )"
-          },
           "Emgu.CV.runtime.windows": {
             "target": "Package",
             "version": "[4.8.0.5324, )"
           },
-          "Pdfium.Net.SDK": {
+          "PDFtoImage": {
             "target": "Package",
-            "version": "[4.87.2704, )"
+            "version": "[2.4.2, )"
           }
         },
         "imports": [

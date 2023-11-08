@@ -9,9 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspose.PDF" Version="23.10.0" />
     <PackageReference Include="Emgu.CV.runtime.windows" Version="4.8.0.5324" />
-    <PackageReference Include="Pdfium.Net.SDK" Version="4.87.2704" />
+    <PackageReference Include="PDFtoImage" Version="2.4.2" />
   </ItemGroup>
 
 </Project>

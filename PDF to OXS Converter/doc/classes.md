@@ -36,4 +36,10 @@ ChartKey "1..*" -u-* Chart
 ChartPattern "1" -u-* Chart
 KeySymbol "1..*" -l-o ChartPattern
 KeySymbol "1..*" -r-* ChartKey
+
+class Util {
+    +validPdfFile(pdfAddress:String) : Boolean
+}
+
+Program -l-> Util : Uses
 @enduml

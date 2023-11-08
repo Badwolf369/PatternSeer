@@ -8,29 +8,77 @@
     ".NETCoreApp,Version=v7.0": {
       "PDF to OXS Converter/1.0.0": {
         "dependencies": {
-          "Aspose.PDF": "23.10.0",
           "Emgu.CV.runtime.windows": "4.8.0.5324",
-          "Pdfium.Net.SDK": "4.87.2704"
+          "PDFtoImage": "2.4.2"
         },
         "runtime": {
           "PDF to OXS Converter.dll": {}
         }
       },
-      "Aspose.PDF/23.10.0": {
-        "dependencies": {
-          "Microsoft.Extensions.DependencyModel": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
-          "System.Diagnostics.DiagnosticSource": "7.0.0",
-          "System.Diagnostics.PerformanceCounter": "7.0.0",
-          "System.Drawing.Common": "7.0.0",
-          "System.Security.Cryptography.Pkcs": "7.0.0",
-          "System.Security.Permissions": "7.0.0",
-          "System.Text.Encoding.CodePages": "7.0.0"
-        },
-        "runtime": {
-          "lib/net7.0/Aspose.PDF.dll": {
-            "assemblyVersion": "23.10.0.0",
-            "fileVersion": "23.10.0.0"
+      "bblanchon.PDFium.Linux/120.0.6056": {
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libpdfium.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libpdfium.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libpdfium.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x86/native/libpdfium.so": {
+            "rid": "linux-musl-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libpdfium.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x86/native/libpdfium.so": {
+            "rid": "linux-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "bblanchon.PDFium.macOS/120.0.6056": {
+        "runtimeTargets": {
+          "runtimes/osx-arm64/native/libpdfium.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libpdfium.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "bblanchon.PDFium.Win32/120.0.6056": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/pdfium.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "120.0.6056.0"
+          },
+          "runtimes/win-x64/native/pdfium.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "120.0.6056.0"
+          },
+          "runtimes/win-x86/native/pdfium.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "120.0.6056.0"
           }
         }
       },
@@ -210,49 +258,23 @@
           }
         }
       },
-      "Microsoft.Extensions.DependencyModel/7.0.0": {
-        "dependencies": {
-          "System.Text.Encodings.Web": "7.0.0",
-          "System.Text.Json": "7.0.3"
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.Extensions.DependencyModel.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        }
-      },
-      "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
-        "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        }
-      },
       "Microsoft.NETCore.Platforms/1.1.1": {},
       "Microsoft.NETCore.Targets/1.1.3": {},
-      "Microsoft.Win32.SystemEvents/7.0.0": {
-        "runtime": {
-          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
+      "PDFtoImage/2.4.2": {
+        "dependencies": {
+          "SkiaSharp": "2.88.6",
+          "SkiaSharp.NativeAssets.Linux.NoDependencies": "2.88.6",
+          "SkiaSharp.NativeAssets.WebAssembly": "2.88.6",
+          "SkiaSharp.NativeAssets.Win32": "2.88.6",
+          "SkiaSharp.NativeAssets.macOS": "2.88.6",
+          "bblanchon.PDFium.Linux": "120.0.6056",
+          "bblanchon.PDFium.Win32": "120.0.6056",
+          "bblanchon.PDFium.macOS": "120.0.6056"
         },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        }
-      },
-      "Pdfium.Net.SDK/4.87.2704": {
         "runtime": {
-          "lib/net7.0/Patagames.Pdf.dll": {
-            "assemblyVersion": "11.79.45.70",
-            "fileVersion": "11.79.45.70"
+          "lib/net7.0/PDFtoImage.dll": {
+            "assemblyVersion": "2.4.2.0",
+            "fileVersion": "2.4.2.0"
           }
         }
       },
@@ -262,77 +284,71 @@
           "Microsoft.NETCore.Targets": "1.1.3"
         }
       },
-      "System.Configuration.ConfigurationManager/7.0.0": {
+      "SkiaSharp/2.88.6": {
         "dependencies": {
-          "System.Diagnostics.EventLog": "7.0.0",
-          "System.Security.Cryptography.ProtectedData": "7.0.0",
-          "System.Security.Permissions": "7.0.0"
+          "SkiaSharp.NativeAssets.Win32": "2.88.6",
+          "SkiaSharp.NativeAssets.macOS": "2.88.6"
         },
         "runtime": {
-          "lib/net7.0/System.Configuration.ConfigurationManager.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+          "lib/net6.0/SkiaSharp.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.6.0"
           }
         }
       },
-      "System.Diagnostics.DiagnosticSource/7.0.0": {},
-      "System.Diagnostics.EventLog/7.0.0": {
-        "runtime": {
-          "lib/net7.0/System.Diagnostics.EventLog.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
+      "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.6": {
+        "dependencies": {
+          "SkiaSharp": "2.88.6"
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.Messages.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
+          "runtimes/linux-arm/native/libSkiaSharp.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
             "fileVersion": "0.0.0.0"
           },
-          "runtimes/win/lib/net7.0/System.Diagnostics.EventLog.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+          "runtimes/linux-arm64/native/libSkiaSharp.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libSkiaSharp.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libSkiaSharp.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
           }
         }
       },
-      "System.Diagnostics.PerformanceCounter/7.0.0": {
-        "dependencies": {
-          "System.Configuration.ConfigurationManager": "7.0.0"
-        },
-        "runtime": {
-          "lib/net7.0/System.Diagnostics.PerformanceCounter.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        },
+      "SkiaSharp.NativeAssets.macOS/2.88.6": {
         "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Diagnostics.PerformanceCounter.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "rid": "osx",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
           }
         }
       },
-      "System.Drawing.Common/7.0.0": {
-        "dependencies": {
-          "Microsoft.Win32.SystemEvents": "7.0.0"
-        },
-        "runtime": {
-          "lib/net7.0/System.Drawing.Common.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        },
+      "SkiaSharp.NativeAssets.WebAssembly/2.88.6": {},
+      "SkiaSharp.NativeAssets.Win32/2.88.6": {
         "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+          "runtimes/win-arm64/native/libSkiaSharp.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libSkiaSharp.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -342,7 +358,6 @@
           "System.Runtime.Extensions": "4.3.0"
         }
       },
-      "System.Formats.Asn1/7.0.0": {},
       "System.Globalization/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.1",
@@ -433,52 +448,6 @@
           "runtime.native.System": "4.3.0"
         }
       },
-      "System.Security.Cryptography.Pkcs/7.0.0": {
-        "dependencies": {
-          "System.Formats.Asn1": "7.0.0"
-        },
-        "runtime": {
-          "lib/net7.0/System.Security.Cryptography.Pkcs.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        }
-      },
-      "System.Security.Cryptography.ProtectedData/7.0.0": {
-        "runtime": {
-          "lib/net7.0/System.Security.Cryptography.ProtectedData.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        }
-      },
-      "System.Security.Permissions/7.0.0": {
-        "dependencies": {
-          "System.Windows.Extensions": "7.0.0"
-        },
-        "runtime": {
-          "lib/net7.0/System.Security.Permissions.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        }
-      },
       "System.Text.Encoding/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.1",
@@ -486,7 +455,6 @@
           "System.Runtime": "4.3.1"
         }
       },
-      "System.Text.Encoding.CodePages/7.0.0": {},
       "System.Text.Encodings.Web/7.0.0": {},
       "System.Text.Json/7.0.3": {
         "dependencies": {
@@ -505,25 +473,6 @@
           "Microsoft.NETCore.Targets": "1.1.3",
           "System.Runtime": "4.3.1"
         }
-      },
-      "System.Windows.Extensions/7.0.0": {
-        "dependencies": {
-          "System.Drawing.Common": "7.0.0"
-        },
-        "runtime": {
-          "lib/net7.0/System.Windows.Extensions.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net7.0/System.Windows.Extensions.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
-          }
-        }
       }
     }
   },
@@ -533,12 +482,26 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Aspose.PDF/23.10.0": {
+    "bblanchon.PDFium.Linux/120.0.6056": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NVzZd76+eVcI6l5t7T/sQOHzamZF0yCpMrucNwdYEq7SZImUm8av93rTLQsYBDgujdYZ/nUnFcptfBMNXfhFAw==",
-      "path": "aspose.pdf/23.10.0",
-      "hashPath": "aspose.pdf.23.10.0.nupkg.sha512"
+      "sha512": "sha512-cefgPD8yOvUD8d0OlhMhHy+l9zkkYne+jdlPpi/BkiH+qOa4Xs3Koz9MTTjMXc8ODpE8o5PIu3pS3hXDQewCbA==",
+      "path": "bblanchon.pdfium.linux/120.0.6056",
+      "hashPath": "bblanchon.pdfium.linux.120.0.6056.nupkg.sha512"
+    },
+    "bblanchon.PDFium.macOS/120.0.6056": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1b+D4LyGJZ4flsauGIv9Q2cpsyNbM83O8J0AnQ67mE8+cyhQ5GKxqH1Bo81xVswrQUrxON+BbSGYmjCF6r8kiw==",
+      "path": "bblanchon.pdfium.macos/120.0.6056",
+      "hashPath": "bblanchon.pdfium.macos.120.0.6056.nupkg.sha512"
+    },
+    "bblanchon.PDFium.Win32/120.0.6056": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6DiESvIsjZDQOT/73LFQ3kCr9vwqjnZH3BTogcWz66meQce1hh9MvFmjyk9EXc1+82jVE4/2eZWlpLDnyegEdw==",
+      "path": "bblanchon.pdfium.win32/120.0.6056",
+      "hashPath": "bblanchon.pdfium.win32.120.0.6056.nupkg.sha512"
     },
     "Emgu.CV/4.8.0.5324": {
       "type": "package",
@@ -575,20 +538,6 @@
       "path": "emgu.runtime.windows.msvc.rt.x86/19.37.32822",
       "hashPath": "emgu.runtime.windows.msvc.rt.x86.19.37.32822.nupkg.sha512"
     },
-    "Microsoft.Extensions.DependencyModel/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-oONNYd71J3LzkWc4fUHl3SvMfiQMYUCo/mDHDEu76hYYxdhdrPYv6fvGv9nnKVyhE9P0h20AU8RZB5OOWQcAXg==",
-      "path": "microsoft.extensions.dependencymodel/7.0.0",
-      "hashPath": "microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-kmn78+LPVMOWeITUjIlfxUPDsI0R6G0RkeAMBmQxAJ7vBJn4q2dTva7pWi65ceN5vPGjJ9q/Uae2WKgvfktJAw==",
-      "path": "microsoft.extensions.logging.abstractions/7.0.0",
-      "hashPath": "microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512"
-    },
     "Microsoft.NETCore.Platforms/1.1.1": {
       "type": "package",
       "serviceable": true,
@@ -603,19 +552,12 @@
       "path": "microsoft.netcore.targets/1.1.3",
       "hashPath": "microsoft.netcore.targets.1.1.3.nupkg.sha512"
     },
-    "Microsoft.Win32.SystemEvents/7.0.0": {
+    "PDFtoImage/2.4.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
-      "path": "microsoft.win32.systemevents/7.0.0",
-      "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
-    },
-    "Pdfium.Net.SDK/4.87.2704": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-/Yrz4K7uA9HK4hbDKor+9GH39SBp04RjwIqsL27RdhTMfRhddWhXuKxvaNKPvYTSusDN4qLYasAsAa7HO/fZ2w==",
-      "path": "pdfium.net.sdk/4.87.2704",
-      "hashPath": "pdfium.net.sdk.4.87.2704.nupkg.sha512"
+      "sha512": "sha512-n1Fch0mD9SQnlfWCDF0dhpYcM+dOE5dfe0YEeBkVMPIBDQ9U9S+j5pA2RSKsTAAmX/SNly6Gj954Sc1WjMx+kg==",
+      "path": "pdftoimage/2.4.2",
+      "hashPath": "pdftoimage.2.4.2.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",
@@ -624,40 +566,40 @@
       "path": "runtime.native.system/4.3.0",
       "hashPath": "runtime.native.system.4.3.0.nupkg.sha512"
     },
-    "System.Configuration.ConfigurationManager/7.0.0": {
+    "SkiaSharp/2.88.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WvRUdlL1lB0dTRZSs5XcQOd5q9MYNk90GkbmRmiCvRHThWiojkpGqWdmEDJdXyHbxG/BhE5hmVbMfRLXW9FJVA==",
-      "path": "system.configuration.configurationmanager/7.0.0",
-      "hashPath": "system.configuration.configurationmanager.7.0.0.nupkg.sha512"
+      "sha512": "sha512-wdfeBAQrEQCbJIRgAiargzP1Uy+0grZiG4CSgBnhAgcJTsPzlifIaO73JRdwIlT3TyBoeU9jEqzwFUhl4hTYnQ==",
+      "path": "skiasharp/2.88.6",
+      "hashPath": "skiasharp.2.88.6.nupkg.sha512"
     },
-    "System.Diagnostics.DiagnosticSource/7.0.0": {
+    "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-9W0ewWDuAyDqS2PigdTxk6jDKonfgscY/hP8hm7VpxYhNHZHKvZTdRckberlFk3VnCmr3xBUyMBut12Q+T2aOw==",
-      "path": "system.diagnostics.diagnosticsource/7.0.0",
-      "hashPath": "system.diagnostics.diagnosticsource.7.0.0.nupkg.sha512"
+      "sha512": "sha512-ecgMclPor+X1wi2dZSVDo1sV2Dm8gwEKNRtS+qiE9qfnQzGHbYWlbTBWalnZBaIl3BLC21b1QO8gMgabhSAh+g==",
+      "path": "skiasharp.nativeassets.linux.nodependencies/2.88.6",
+      "hashPath": "skiasharp.nativeassets.linux.nodependencies.2.88.6.nupkg.sha512"
     },
-    "System.Diagnostics.EventLog/7.0.0": {
+    "SkiaSharp.NativeAssets.macOS/2.88.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eUDP47obqQm3SFJfP6z+Fx2nJ4KKTQbXB4Q9Uesnzw9SbYdhjyoGXuvDn/gEmFY6N5Z3bFFbpAQGA7m6hrYJCw==",
-      "path": "system.diagnostics.eventlog/7.0.0",
-      "hashPath": "system.diagnostics.eventlog.7.0.0.nupkg.sha512"
+      "sha512": "sha512-Sko9LFxRXSjb3OGh5/RxrVRXxYo48tr5NKuuSy6jB85GrYt8WRqVY1iLOLwtjPiVAt4cp+pyD4i30azanS64dw==",
+      "path": "skiasharp.nativeassets.macos/2.88.6",
+      "hashPath": "skiasharp.nativeassets.macos.2.88.6.nupkg.sha512"
     },
-    "System.Diagnostics.PerformanceCounter/7.0.0": {
+    "SkiaSharp.NativeAssets.WebAssembly/2.88.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-L+zIMEaXp1vA4wZk1KLMpk6tvU0xy94R0IfmhkmTWeC4KwShsmAfbg5I19LgjsCTYp6GVdXZ2aHluVWL0QqBdA==",
-      "path": "system.diagnostics.performancecounter/7.0.0",
-      "hashPath": "system.diagnostics.performancecounter.7.0.0.nupkg.sha512"
+      "sha512": "sha512-pye92IhbHq3uqxrU/I+LdkIRAyWfiUNeJ5IIAmYWt2DQPOU44Uh1nTIcjQ2ghRIFWq62VVUJJy5saLBcQO5zyw==",
+      "path": "skiasharp.nativeassets.webassembly/2.88.6",
+      "hashPath": "skiasharp.nativeassets.webassembly.2.88.6.nupkg.sha512"
     },
-    "System.Drawing.Common/7.0.0": {
+    "SkiaSharp.NativeAssets.Win32/2.88.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
-      "path": "system.drawing.common/7.0.0",
-      "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
+      "sha512": "sha512-7TzFO0u/g2MpQsTty4fyCDdMcfcWI+aLswwfnYXr3gtNS6VLKdMXPMeKpJa3pJSLnUBN6wD0JjuCe8OoLBQ6cQ==",
+      "path": "skiasharp.nativeassets.win32/2.88.6",
+      "hashPath": "skiasharp.nativeassets.win32.2.88.6.nupkg.sha512"
     },
     "System.Drawing.Primitives/4.3.0": {
       "type": "package",
@@ -665,13 +607,6 @@
       "sha512": "sha512-1QU/c35gwdhvj77fkScXQQbjiVAqIL3fEYn/19NE0CV/ic5TN5PyWAft8HsrbRd4SBLEoErNCkWSzMDc0MmbRw==",
       "path": "system.drawing.primitives/4.3.0",
       "hashPath": "system.drawing.primitives.4.3.0.nupkg.sha512"
-    },
-    "System.Formats.Asn1/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-+nfpV0afLmvJW8+pLlHxRjz3oZJw4fkyU9MMEaMhCsHi/SN9bGF9q79ROubDiwTiCHezmK0uCWkPP7tGFP/4yg==",
-      "path": "system.formats.asn1/7.0.0",
-      "hashPath": "system.formats.asn1.7.0.0.nupkg.sha512"
     },
     "System.Globalization/4.3.0": {
       "type": "package",
@@ -750,40 +685,12 @@
       "path": "system.runtime.interopservices.runtimeinformation/4.3.0",
       "hashPath": "system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512"
     },
-    "System.Security.Cryptography.Pkcs/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-mjUbEXkR6DYRef6dnEYKdfec9otcAkibExL+1f9hmbGlWIUyaCnS3Y3oGZEet38waXmuY1ORE8vgv4sgD5nMYg==",
-      "path": "system.security.cryptography.pkcs/7.0.0",
-      "hashPath": "system.security.cryptography.pkcs.7.0.0.nupkg.sha512"
-    },
-    "System.Security.Cryptography.ProtectedData/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-xSPiLNlHT6wAHtugASbKAJwV5GVqQK351crnILAucUioFqqieDN79evO1rku1ckt/GfjIn+b17UaSskoY03JuA==",
-      "path": "system.security.cryptography.protecteddata/7.0.0",
-      "hashPath": "system.security.cryptography.protecteddata.7.0.0.nupkg.sha512"
-    },
-    "System.Security.Permissions/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Vmp0iRmCEno9BWiskOW5pxJ3d9n+jUqKxvX4GhLwFhnQaySZmBN2FuC0N5gjFHgyFMUjC5sfIJ8KZfoJwkcMmA==",
-      "path": "system.security.permissions/7.0.0",
-      "hashPath": "system.security.permissions.7.0.0.nupkg.sha512"
-    },
     "System.Text.Encoding/4.3.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
       "path": "system.text.encoding/4.3.0",
       "hashPath": "system.text.encoding.4.3.0.nupkg.sha512"
-    },
-    "System.Text.Encoding.CodePages/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-LSyCblMpvOe0N3E+8e0skHcrIhgV2huaNcjUUEa8hRtgEAm36aGkRoC8Jxlb6Ra6GSfF29ftduPNywin8XolzQ==",
-      "path": "system.text.encoding.codepages/7.0.0",
-      "hashPath": "system.text.encoding.codepages.7.0.0.nupkg.sha512"
     },
     "System.Text.Encodings.Web/7.0.0": {
       "type": "package",
@@ -812,13 +719,6 @@
       "sha512": "sha512-LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
-    },
-    "System.Windows.Extensions/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-bR4qdCmssMMbo9Fatci49An5B1UaVJZHKNq70PRgzoLYIlitb8Tj7ns/Xt5Pz1CkERiTjcVBDU2y1AVrPBYkaw==",
-      "path": "system.windows.extensions/7.0.0",
-      "hashPath": "system.windows.extensions.7.0.0.nupkg.sha512"
     }
   }
 }
