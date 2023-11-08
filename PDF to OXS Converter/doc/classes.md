@@ -4,31 +4,31 @@ class Program {
     Main(String[]:args)
 }
 class Chart {
-    -SourceImages : Rasterized PDF
+    -SourceImages : List<Mat>
     -<o> Pattern : ChartPattern
     -<o> Key : ChartKey
-    +Chart(source:Rasterized PDF)
+    +Chart(source:List<Mat>)
 }
 class ChartPattern {
-    -SourceImages : 2D list of OpenCV Images
+    -SourceImages : List<List<Mat>>
     -<o> Width : Integer > 0
     -<o> Height : Integer > 0
-    -<o> Grid : 2D List of KeySymbols
-    +ChartPattern(sourceImages: 2D List of OpenCV Images, key:ChartKey)
+    -<o> Grid : List<List<*KeySymbols>>
+    +ChartPattern(sourceImages: List<List<Mat>>, key:ChartKey)
 }
 class ChartKey {
-    -SourceImage : OpenCV Image
-    -<o> Symbols : List of KeySymbolss
-    +ChartKey(source:OpenCV Image)
-    +MatchSymbol(image:OpenCV Image) : KeySymbol
+    -SourceImage : Mat
+    -<o> Symbols : List<KeySymbol>
+    +ChartKey(source:Mat)
+    +MatchSymbol(image:Mat) : *KeySymbol
 }
 class KeySymbol {
-    -<o> Image : OpenCV Image
+    -<o> Image : Mat
     -<o> ThreadColor : String
     -<o> ThreadCount : Integer = 2
     -<i/o> StitchCount : Integer[0..1]
     -<o> ThreadBrand : String = "DMC"
-    +KeySymbol(image:OpenCV Image)
+    +KeySymbol(image:Mat)
 }
 
 Chart "1" -l-* Program : < Creates
