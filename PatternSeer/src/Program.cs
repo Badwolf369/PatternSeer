@@ -23,10 +23,12 @@ namespace PatternSeer {
                     pdfCvImages.Add(new Mat());
                     CvInvoke.Imdecode(imageStream.ToArray(), ImreadModes.Color, pdfCvImages[page]);
                 }
-                //? image debugging options
-                Mat cvDebug = new Mat();
-                CvInvoke.ResizeForFrame(pdfCvImages[page], cvDebug, new Size(480, 640));
-                CvInvoke.Imshow($"Page {page}", cvDebug);
+                Console.WriteLine($"Sucessfully loaded page {page} of pattern");
+                //? \/ image debugging \/
+                // Mat cvDebug = new Mat();
+                // CvInvoke.ResizeForFrame(pdfCvImages[page], cvDebug, new Size(480, 640));
+                // CvInvoke.Imshow($"Page {page}", cvDebug);
+                //? /\ image debugging /\
             }
             CvInvoke.WaitKey();
             CvInvoke.DestroyAllWindows();
