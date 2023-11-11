@@ -1,6 +1,5 @@
 ﻿using Emgu.CV;
 using Emgu.CV.CvEnum;
-using System.Drawing;
 using SkiaSharp;
 
 namespace PatternSeer {
