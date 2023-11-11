@@ -1,7 +1,7 @@
 using System.Dynamic;
 using System.Reflection;
 
-namespace PDF2OXS {
+namespace PatternSeer {
     class KeySymbol {
         //TODO: Int here shall be replaced with the OpenCV image type
         private int Image;

@@ -3,7 +3,7 @@ using Emgu.CV.CvEnum;
 using System.Drawing;
 using SkiaSharp;
 
-namespace PDF2OXS {
+namespace PatternSeer {
     class Program {
         static void Main(string[] args) {
             Console.WriteLine("Please enter the path of a valid PDF File:");

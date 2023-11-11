@@ -1,4 +1,4 @@
-namespace PDF2OXS {
+namespace PatternSeer {
     class ChartKey {
         //TODO: Int here shall be replaced with the OpenCV image type
         private int SourceImage;
