@@ -1,6 +1,7 @@
 ﻿using Emgu.CV;
 using Emgu.CV.CvEnum;
 using System.Drawing;
+using SkiaSharp;
 
 namespace PDF2OXS {
     class Program {
@@ -12,14 +13,21 @@ namespace PDF2OXS {
                 return;
             }
 
-            Mat cvImage = new Mat();
-            using (MemoryStream imageStream = new MemoryStream()) {
-                byte[] pdfBytes = File.ReadAllBytes(sourceAddress);
-                PDFtoImage.Conversion.SavePng(imageStream, pdfBytes);
-                CvInvoke.Imdecode(imageStream.ToArray(), ImreadModes.Color, cvImage);
+            List<Mat> pdfCvImages = new List<Mat>();
+            byte[] pdfBytes = File.ReadAllBytes(sourceAddress);
+            string pdf64String = Convert.ToBase64String(pdfBytes);
+            var pdfSKBmps = PDFtoImage.Conversion.ToImages(pdf64String).Cast<SKBitmap>().ToList();
+            for (int page = 0; page < pdfSKBmps.Count; page++) {
+                using (MemoryStream imageStream = new MemoryStream()) {
+                    pdfSKBmps[page].Encode(imageStream, SKEncodedImageFormat.Png, 100);
+                    pdfCvImages.Add(new Mat());
+                    CvInvoke.Imdecode(imageStream.ToArray(), ImreadModes.Color, pdfCvImages[page]);
+                }
+                //? image debugging options
+                Mat cvDebug = new Mat();
+                CvInvoke.ResizeForFrame(pdfCvImages[page], cvDebug, new Size(480, 640));
+                CvInvoke.Imshow($"Page {page}", cvDebug);
             }
-            CvInvoke.Resize(cvImage, cvImage, new Size(0, 0), 0.2, 0.2);
-            CvInvoke.Imshow("Test", cvImage);
             CvInvoke.WaitKey();
         }
     }
