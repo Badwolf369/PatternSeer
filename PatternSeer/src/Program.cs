@@ -16,7 +16,8 @@ namespace PatternSeer {
             List<Mat> pdfCvImages = new List<Mat>();
             byte[] pdfBytes = File.ReadAllBytes(PatternAddress);
             string pdf64String = Convert.ToBase64String(pdfBytes);
-            var pdfSKBmps = PDFtoImage.Conversion.ToImages(pdf64String).Cast<SKBitmap>().ToList();
+            var pdfSKBmps = PDFtoImage.Conversion.ToImages(pdf64String)
+                .Cast<SKBitmap>().ToList();
             for (int page = 0; page < pdfSKBmps.Count; page++) {
                 using (MemoryStream imageStream = new MemoryStream()) {
                     pdfSKBmps[page].Encode(imageStream, SKEncodedImageFormat.Png, 100);
