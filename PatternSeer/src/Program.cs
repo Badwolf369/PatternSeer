@@ -29,6 +29,7 @@ namespace PatternSeer {
                 CvInvoke.Imshow($"Page {page}", cvDebug);
             }
             CvInvoke.WaitKey();
+            CvInvoke.DestroyAllWindows();
         }
     }
 }

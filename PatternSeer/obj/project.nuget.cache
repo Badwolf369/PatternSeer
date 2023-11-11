@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UZTYHJ1PkM3zlyDJJCIPfeTX9KsdiaaKAWZU3ZXmaFEr8nE/skyxMQpFXS+aT1OgmZs03sw3WPfTAmmu+JaiUQ==",
+  "dgSpecHash": "VjjyCp97UVdZbSTTbc9cQm7rqfTI0ixMUpWL+uAJ2icCCH84IJeZmpE/LlnJ5bQ3JEJGlpP8ArFYyyLKvVvetw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\Cross Stitch PDF to OXS Converter\\PatternSeer\\PatternSeer.csproj",
+  "projectFilePath": "C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\PatternSeer\\PatternSeer\\PatternSeer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\samwi\\.nuget\\packages\\bblanchon.pdfium.linux\\120.0.6056\\bblanchon.pdfium.linux.120.0.6056.nupkg.sha512",
     "C:\\Users\\samwi\\.nuget\\packages\\bblanchon.pdfium.macos\\120.0.6056\\bblanchon.pdfium.macos.120.0.6056.nupkg.sha512",
