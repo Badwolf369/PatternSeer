@@ -10,11 +10,13 @@ namespace PatternSeer {
             string sourceAddress = Console.ReadLine();
             if (!Util.validPdfFile(sourceAddress)) {
                 Console.WriteLine("Address entered is not a valid PDF or does not exist.");
+            string PatternAddress = Console.ReadLine();
+            if (!Util.validPdfFile(PatternAddress)) {
                 return;
             }
 
             List<Mat> pdfCvImages = new List<Mat>();
-            byte[] pdfBytes = File.ReadAllBytes(sourceAddress);
+            byte[] pdfBytes = File.ReadAllBytes(PatternAddress);
             string pdf64String = Convert.ToBase64String(pdfBytes);
             var pdfSKBmps = PDFtoImage.Conversion.ToImages(pdf64String).Cast<SKBitmap>().ToList();
             for (int page = 0; page < pdfSKBmps.Count; page++) {
