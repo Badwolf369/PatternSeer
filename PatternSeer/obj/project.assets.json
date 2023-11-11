@@ -2228,11 +2228,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\Cross Stitch PDF to OXS Converter\\PDF to OXS Converter\\PDF to OXS Converter.csproj",
-      "projectName": "PDF to OXS Converter",
-      "projectPath": "C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\Cross Stitch PDF to OXS Converter\\PDF to OXS Converter\\PDF to OXS Converter.csproj",
+      "projectUniqueName": "C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\Cross Stitch PDF to OXS Converter\\PatternSeer\\PatternSeer.csproj",
+      "projectName": "PatternSeer",
+      "projectPath": "C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\Cross Stitch PDF to OXS Converter\\PatternSeer\\PatternSeer.csproj",
       "packagesPath": "C:\\Users\\samwi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\Cross Stitch PDF to OXS Converter\\PDF to OXS Converter\\obj\\",
+      "outputPath": "C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\Cross Stitch PDF to OXS Converter\\PatternSeer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

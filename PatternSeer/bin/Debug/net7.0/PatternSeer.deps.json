@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "PDF to OXS Converter/1.0.0": {
+      "PatternSeer/1.0.0": {
         "dependencies": {
           "Emgu.CV.runtime.windows": "4.8.0.5324",
           "PDFtoImage": "2.4.2"
         },
         "runtime": {
-          "PDF to OXS Converter.dll": {}
+          "PatternSeer.dll": {}
         }
       },
       "bblanchon.PDFium.Linux/120.0.6056": {
@@ -477,7 +477,7 @@
     }
   },
   "libraries": {
-    "PDF to OXS Converter/1.0.0": {
+    "PatternSeer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
