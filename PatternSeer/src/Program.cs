@@ -7,11 +7,9 @@ namespace PatternSeer {
     class Program {
         static void Main(string[] args) {
             Console.WriteLine("Please enter the path of a valid PDF File:");
-            string sourceAddress = Console.ReadLine();
-            if (!Util.validPdfFile(sourceAddress)) {
-                Console.WriteLine("Address entered is not a valid PDF or does not exist.");
             string PatternAddress = Console.ReadLine();
             if (!Util.validPdfFile(PatternAddress)) {
+                Console.WriteLine($"\"{PatternAddress}\" is not a valid PDF or does not exist.");
                 return;
             }
 
