@@ -1,9 +1,16 @@
-- Import pdf pages as *images*
-- Create the *Chart* from the *images* 
-    - Locate which *images* contain relevent data
-        - Which *images* contain the pattern?
-        - Which *images* contain the list of threads?
-        - Which *images* contain the copyright information?
-        - Which *images* contain chart info such as author, title, size, fabric, etc
-    - Create the *ChartKey* from the images that contain a list of threads
-    - Create the *ChartPattern* from the images that contain the pattern and from the *ChartKey*
+- Import pdf pages as images
+    - Ask user for a path to the pattern PDf
+    - Validate the pdf path and ask user again if it is invalid
+    - Rasterize PDF and save into a memory stream
+    - Decode images from the data in the memory stream
+- Create the Chart from the images 
+    - Guess which images contain chart data about the pattern layout
+        - Add a confidence score to each guess
+        - If no confidence score is able to meet a certain minimum threshold, alert the user and ask to enter manual mode for this step
+        - If the number of guessed images does not create a grid, alert the user and ask to enter manual mode for this step
+            Several patterns do not create a perfect grid of pages, my advent calendar for example. We must find an alternative method for stitching pages together
+    - Guess which images contain data about the chart key
+        - Add a confidence score to each guess
+        - Choose the image that has the highest confidence score. If no image has a sufficiently high score, alert the user and ask to enter manual mode for this step
+    - Use OCR to locate all blurbs of text in each of the images
+    - Create a confidence score for each blurb based on location and content in order to guess general chart info such as stitched area, fabric info, copyright info, artist, title, etc.
