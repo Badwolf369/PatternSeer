@@ -5,11 +5,17 @@ using SkiaSharp;
 namespace PatternSeer {
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("Please enter the path of a valid PDF File:");
-            string PatternAddress = Console.ReadLine();
-            if (!Util.validPdfFile(PatternAddress)) {
-                Console.WriteLine($"\"{PatternAddress}\" is not a valid PDF or does not exist.");
-                return;
+            string PatternAddress;
+            while(true) {
+                Console.WriteLine("Please enter the path of a valid PDF File:");
+                PatternAddress = Console.ReadLine();
+                if (Util.validPdfFile(PatternAddress)) {
+                    Console.WriteLine($"Importing {PatternAddress}");
+                    break;
+                }
+                else {
+                    Console.WriteLine($"\"{PatternAddress}\" does not exist or is not a PDF not exist.");
+                }
             }
 
             List<Mat> pdfCvImages = new List<Mat>();
