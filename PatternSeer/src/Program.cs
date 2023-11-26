@@ -2,8 +2,16 @@
 using Emgu.CV.CvEnum;
 using SkiaSharp;
 
+
 namespace PatternSeer {
+    /// <summary>
+    /// Class <c>Program</c> Main programs entry point.
+    /// </summary>
     class Program {
+        /// <summary>
+        /// Take user input from the command line, sterilize it, and give it to the program.
+        /// </summary>
+        /// <param name="args">User's command line input</param>
         static void Main(string[] args) {
             string PatternAddress;
             while(true) {
