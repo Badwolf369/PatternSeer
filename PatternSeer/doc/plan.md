@@ -1,8 +1,28 @@
+# Window Setup
+
+- Configure the window to use for the UI
+    - Toolbar at the top of the screen
+        - Button to open a new pdf file
+    - Preview pane to render the pdf pages
+        - Scrolling should be enabled when hovering over this pane. Also CTRL+Scroll and CTRL++/CTRL+- should control zoom.
+        - There should be a scroll bar with a thing next to it that displays what page you are on when you change pages
+        - Pdf pages are to display information about the chart such as areas that have been autodetected or manually input as being relevent
+        - If no PDF is loaded then display a message asking to import a pdf
+    - Footer
+        - status message
+        - name of current pdf file open
+        - current pagenumber
+- Open the window
+
+# Opening a PDF
+
 - Import pdf pages as images
-    - Ask user for a path to the pattern PDf
-    - Validate the pdf path and ask user again if it is invalid
+    - Validate the pdf path provided and throw an error if it is invalid
     - Rasterize PDF and save into a memory stream
     - Decode images from the data in the memory stream
+
+# Depricated for now
+
 - Create the Chart from the images 
     - Guess which images contain chart data about the pattern layout
         - Add a confidence score to each guess
