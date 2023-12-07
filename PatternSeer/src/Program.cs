@@ -1,6 +1,8 @@
-﻿using Emgu.CV;
+﻿using Avalonia;
+using Emgu.CV;
 using Emgu.CV.CvEnum;
 using SkiaSharp;
+using PatternSeer.Views;
 
 
 namespace PatternSeer {
@@ -12,7 +14,7 @@ namespace PatternSeer {
         /// Take user input from the command line, sterilize it, and give it to the program.
         /// </summary>
         /// <param name="args">User's command line input</param>
-        static void Main(string[] args) {
+        static void Mains(string[] args) {
             string PatternAddress;
             while(true) {
                 Console.WriteLine("Please enter the path of a valid PDF File:");
@@ -46,6 +48,13 @@ namespace PatternSeer {
             }
             CvInvoke.WaitKey();
             CvInvoke.DestroyAllWindows();
+        }
+
+        public static AppBuilder BuildAvaloniaApp()
+            => AppBuilder.Configure<App>().UsePlatformDetect();
+
+        static void Main(string[] args) {
+            BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
         }
     }
 }
