@@ -24,10 +24,10 @@ class ChartKey {
 }
 class KeySymbol {
     -<o> Image : Mat
-    -<o> ThreadColor : String
-    -<o> ThreadCount : Integer = 2
-    -<i/o> StitchCount : Integer[0..1]
-    -<o> ThreadBrand : String = "DMC"
+    -<o> Color : String
+    -<o> Strands : Integer = 2
+    -<i/o> Count : Integer[0..1]
+    -<o> Brand : String = "DMC"
     +KeySymbol(image:Mat)
 }
 
