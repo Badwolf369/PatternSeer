@@ -1,4 +1,7 @@
-namespace PatternSeer {
+namespace PatternSeer.Models {
+    /// <summary>
+    /// Wrapper for all information regarding a cross stitch chartww
+    /// </summary>
     class Chart {
         //TODO int here is to be replaced with the OpenCV image type
         private int Source;

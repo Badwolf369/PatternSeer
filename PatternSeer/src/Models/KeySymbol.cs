@@ -1,7 +1,7 @@
 using System.Dynamic;
 using System.Reflection;
 
-namespace PatternSeer {
+namespace PatternSeer.Models {
     class KeySymbol {
         //TODO: Int here shall be replaced with the OpenCV image type
         private int Image;
@@ -14,16 +14,16 @@ namespace PatternSeer {
         public int GetImage() {
             return Image;
         }
-        public string GetThreadColor() {
+        public string GetColor() {
             return ThreadColor;
         }
-        public int GetThreadCount() {
+        public int GetStrand() {
             return ThreadCount;
         }
-        public int? GetStitchCount() {
+        public int? GetCount() {
             return StitchCount;
         }
-        public int? SetStitchCount(int? stitchCount) {
+        public int? SetCount(int? stitchCount) {
             StitchCount = stitchCount;
             return stitchCount;
         }
