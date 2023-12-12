@@ -23,7 +23,7 @@
 
 # Depricated for now
 
-- Create the Chart from the images 
+- Create the Chart from the images
     - Guess which images contain chart data about the pattern layout
         - Add a confidence score to each guess
         - If no confidence score is able to meet a certain minimum threshold, alert the user and ask to enter manual mode for this step

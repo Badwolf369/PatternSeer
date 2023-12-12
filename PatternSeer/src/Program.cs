@@ -3,6 +3,7 @@ using Emgu.CV;
 using Emgu.CV.CvEnum;
 using SkiaSharp;
 using PatternSeer.Views;
+using Avalonia.ReactiveUI;
 
 
 namespace PatternSeer {
@@ -51,7 +52,9 @@ namespace PatternSeer {
         }
 
         public static AppBuilder BuildAvaloniaApp()
-            => AppBuilder.Configure<App>().UsePlatformDetect();
+            => AppBuilder.Configure<App>()
+            .UsePlatformDetect()
+            .UseReactiveUI();
 
         static void Main(string[] args) {
             BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
