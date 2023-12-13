@@ -5,10 +5,12 @@ using ReactiveUI;
 
 namespace PatternSeer.ViewModels {
     public class MainWindowViewModel : ReactiveObject {
-        private ReactiveCommand<Func<Task<Uri>>, Unit> OpenSystemFilePickerAsync { get; }
-        public async Task OnOpenSystemFilePickerAsync(Func<Task<Uri>> PickFileAsync) {
-            Uri filePath = await PickFileAsync();
-            Debug.WriteLine($"Picked {filePath}");
+        public EventHandler<Uri> OpenSystemFilePicker;
+        public ReactiveCommand<Unit, Unit> OpenFilePicker { get; }
+        public void OnOpenFilePicker() {
+            Uri FilePath = null;
+            OpenSystemFilePicker?.Invoke(this, FilePath);
+            Console.WriteLine($"Picked {FilePath}");
         }
 
         private ReactiveCommand<Unit, Unit> Exit { get; }
@@ -19,7 +21,7 @@ namespace PatternSeer.ViewModels {
 
         public MainWindowViewModel() {
             Exit = ReactiveCommand.Create(OnExit);
-            OpenSystemFilePickerAsync = ReactiveCommand.CreateFromTask<Func<Task<Uri>>>(OnOpenSystemFilePickerAsync);
+            OpenFilePicker = ReactiveCommand.Create(OnOpenFilePicker);
         }
     }
 }

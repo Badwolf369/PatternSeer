@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using PatternSeer.Views;
-using PatternSeer.ViewModels;
+
 
 namespace PatternSeer {
     public partial class App : Application {
@@ -12,9 +12,7 @@ namespace PatternSeer {
 
         public override void OnFrameworkInitializationCompleted() {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
-                desktop.MainWindow = new MainWindow() {
-                    DataContext = new MainWindowViewModel()
-                };
+                desktop.MainWindow = new MainWindow();
             }
 
             base.OnFrameworkInitializationCompleted();

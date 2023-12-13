@@ -12,11 +12,7 @@
             <Button Content="File" Background="#f0f0f0">
                 <Button.Flyout>
                     <MenuFlyout>
-                        <MenuItem Header="Open" 
-                            Command="{Binding OpenSystemFilePickerAsync}" 
-                            CommandParameter="{Binding
-                                ElementName=mainwindow,
-                                Path=SystemFilePickerAsync}"/>
+                        <MenuItem Header="Open" Command="{Binding OpenFilePicker}"/>
                         <MenuItem Header="Exit" Command="{Binding Exit}"/>
                     </MenuFlyout>
                 </Button.Flyout>

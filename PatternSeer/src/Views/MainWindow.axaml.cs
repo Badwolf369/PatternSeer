@@ -1,16 +1,21 @@
 using System.Diagnostics;
 using Avalonia.Controls;
 using Avalonia.Platform.Storage;
+using PatternSeer.ViewModels;
 
 
 namespace PatternSeer.Views {
     public partial class MainWindow : Window {
         public MainWindow() {
+            MainWindowViewModel vm = new MainWindowViewModel();
+            vm.OpenSystemFilePicker += OpenSystemFilePickerAsync;
+            DataContext = vm;
+
             InitializeComponent();
         }
 
-        private async Task<Uri> SystemFilePickerAsync() {
-            Debug.WriteLine("Opening file selection dialogue");
+        private async void OpenSystemFilePickerAsync(Object sender, Uri FilePath) {
+            Console.WriteLine("Opening file selection dialogue");
 
             var topLevel = TopLevel.GetTopLevel(this);
             var files = await topLevel.StorageProvider.OpenFilePickerAsync(
@@ -20,7 +25,12 @@ namespace PatternSeer.Views {
                     FileTypeFilter = new[] {FilePickerFileTypes.Pdf}
             });
 
-            return files[0].Path;
+            if (files.Count > 0) {
+                FilePath = files[0].Path;
+            } else {
+                FilePath = null;
+            }
+            Console.WriteLine("Closing file selection dialogue");
         }
     }
 }
