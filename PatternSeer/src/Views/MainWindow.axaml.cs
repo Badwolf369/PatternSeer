@@ -13,7 +13,6 @@ namespace PatternSeer.Views {
             Debug.WriteLine("Opening file selection dialogue");
 
             var topLevel = TopLevel.GetTopLevel(this);
-
             var files = await topLevel.StorageProvider.OpenFilePickerAsync(
                 new FilePickerOpenOptions {
                     Title = "Open cross stitch chart PDF",
