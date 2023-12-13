@@ -1,6 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
     x:Class="PatternSeer.Views.MainWindow"
+    x:Name="mainwindow"
     Width="400" Height="300"
     Title="PatternSeer" Icon="\assets\logo.ico">
     <Panel>
@@ -10,7 +12,11 @@
             <Button Content="File" Background="#f0f0f0">
                 <Button.Flyout>
                     <MenuFlyout>
-                        <MenuItem Header="Open" Command="{Binding OpenAsyncFilePicker}"/>
+                        <MenuItem Header="Open" 
+                            Command="{Binding OpenSystemFilePickerAsync}" 
+                            CommandParameter="{Binding
+                                ElementName=mainwindow,
+                                Path=SystemFilePickerAsync}"/>
                         <MenuItem Header="Exit" Command="{Binding Exit}"/>
                     </MenuFlyout>
                 </Button.Flyout>
