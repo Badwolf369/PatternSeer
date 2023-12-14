@@ -12,12 +12,16 @@ namespace PatternSeer.ViewModels {
             OpenSystemFilePicker?.Invoke(this, OnCloseFileDialogue);
         }
         private void OnCloseFileDialogue(Uri filePath) {
-            Console.WriteLine($"Picked {filePath}");
+            if (filePath is not null) {
+                Console.WriteLine($"Picked {filePath}");
+            } else {
+                Console.WriteLine("No file was picked");
+            }
         }
 
         private ReactiveCommand<Unit,Unit> Exit { get; }
         private void OnExit() {
-            Debug.WriteLine("Goodbye ):");
+            Console.WriteLine("Goodbye ):");
             Environment.Exit(0);
         }
 

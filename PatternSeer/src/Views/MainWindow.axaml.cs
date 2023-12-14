@@ -8,14 +8,10 @@ using PatternSeer.ViewModels;
 namespace PatternSeer.Views {
     public partial class MainWindow : Window {
         public MainWindow() {
-            MainWindowViewModel vm = new MainWindowViewModel();
-            vm.OpenSystemFilePicker += OpenSystemFilePickerAsync;
-            DataContext = vm;
-
             InitializeComponent();
         }
 
-        private async void OpenSystemFilePickerAsync(Object sender, Action<Uri> exitCallback) {
+        public async void OpenSystemFilePickerAsync(Object sender, Action<Uri> exitCallback) {
             Console.WriteLine("Opening file selection dialogue");
 
             var topLevel = TopLevel.GetTopLevel(this);
@@ -25,13 +21,13 @@ namespace PatternSeer.Views {
                     AllowMultiple = false,
                     FileTypeFilter = new[] {FilePickerFileTypes.Pdf}
             });
+            Console.WriteLine("Closing file selection dialogue");
 
             if (files.Count > 0) {
                 exitCallback(files[0].Path);
             } else {
                 exitCallback(null);
             }
-            Console.WriteLine("Closing file selection dialogue");
         }
     }
 }
