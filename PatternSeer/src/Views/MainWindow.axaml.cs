@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Avalonia.Controls;
+using Avalonia.MicroCom;
 using Avalonia.Platform.Storage;
 using PatternSeer.ViewModels;
 
@@ -14,7 +15,7 @@ namespace PatternSeer.Views {
             InitializeComponent();
         }
 
-        private async void OpenSystemFilePickerAsync(Object sender, Uri FilePath) {
+        private async void OpenSystemFilePickerAsync(Object sender, Action<Uri> exitCallback) {
             Console.WriteLine("Opening file selection dialogue");
 
             var topLevel = TopLevel.GetTopLevel(this);
@@ -26,9 +27,9 @@ namespace PatternSeer.Views {
             });
 
             if (files.Count > 0) {
-                FilePath = files[0].Path;
+                exitCallback(files[0].Path);
             } else {
-                FilePath = null;
+                exitCallback(null);
             }
             Console.WriteLine("Closing file selection dialogue");
         }
