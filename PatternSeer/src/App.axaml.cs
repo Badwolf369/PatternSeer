@@ -6,11 +6,20 @@ using PatternSeer.ViewModels;
 
 
 namespace PatternSeer {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class App : Application {
+        /// <summary>
+        /// 
+        /// </summary>
         public override void Initialize() {
             AvaloniaXamlLoader.Load(this);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public override void OnFrameworkInitializationCompleted() {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
                 MainWindowViewModel vm = new MainWindowViewModel();

@@ -3,11 +3,22 @@ using Avalonia.Platform.Storage;
 
 
 namespace PatternSeer.Views {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class MainWindow : Window {
+        /// <summary>
+        /// 
+        /// </summary>
         public MainWindow() {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="exitCallback"></param>
         public async void OpenSystemFilePickerAsync(Object sender, Action<Uri> exitCallback) {
             Console.WriteLine("Opening file selection dialogue");
 
@@ -27,3 +38,4 @@ namespace PatternSeer.Views {
             }
         }
     }
+}

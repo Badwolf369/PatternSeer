@@ -50,11 +50,19 @@ namespace PatternSeer {
             CvInvoke.DestroyAllWindows();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .UseReactiveUI();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args) {
             BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
         }
