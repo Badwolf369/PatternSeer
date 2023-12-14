@@ -2,7 +2,6 @@
 using Emgu.CV;
 using Emgu.CV.CvEnum;
 using SkiaSharp;
-using PatternSeer.Views;
 using Avalonia.ReactiveUI;
 
 

@@ -1,6 +1,4 @@
-using System.Diagnostics;
 using System.Reactive;
-using Avalonia.Platform.Storage;
 using ReactiveUI;
 
 
@@ -30,4 +28,3 @@ namespace PatternSeer.ViewModels {
             OpenFilePicker = ReactiveCommand.Create(OnOpenFilePicker);
         }
     }
-}

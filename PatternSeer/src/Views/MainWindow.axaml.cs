@@ -1,8 +1,5 @@
-using System.Diagnostics;
 using Avalonia.Controls;
-using Avalonia.MicroCom;
 using Avalonia.Platform.Storage;
-using PatternSeer.ViewModels;
 
 
 namespace PatternSeer.Views {
@@ -30,4 +27,3 @@ namespace PatternSeer.Views {
             }
         }
     }
-}
