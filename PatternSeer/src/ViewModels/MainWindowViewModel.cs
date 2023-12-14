@@ -4,17 +4,26 @@ using ReactiveUI;
 
 namespace PatternSeer.ViewModels {
     public class MainWindowViewModel : ReactiveObject {
+        private Uri LoadedFile;
         public event EventHandler<Action<Uri>> OpenSystemFilePicker;
-        private ReactiveCommand<Unit,Unit> OpenFilePicker { get; }
-        private void OnOpenFilePicker() {
-            OpenSystemFilePicker?.Invoke(this, OnCloseFileDialogue);
-        }
-        private void OnCloseFileDialogue(Uri filePath) {
-            if (filePath is not null) {
-                Console.WriteLine($"Picked {filePath}");
+        private SemaphoreSlim callbackSignal;
+        private ReactiveCommand<Unit,Unit> OpenFile { get; }
+        private async Task OnOpenFile() {
+            await OpenFilePicker();
+             if (LoadedFile is not null) {
+                Console.WriteLine($"Opened {LoadedFile}");
             } else {
-                Console.WriteLine("No file was picked");
+                Console.WriteLine("No file was opened");
             }
+        }
+        private async Task OpenFilePicker() {
+            OpenSystemFilePicker?.Invoke(this, CloseFilePicker);
+            callbackSignal = new SemaphoreSlim(0, 1);
+            await callbackSignal.WaitAsync();
+        }
+        private void CloseFilePicker(Uri filePath) {
+            LoadedFile = filePath;
+            callbackSignal.Release();
         }
 
         private ReactiveCommand<Unit,Unit> Exit { get; }
@@ -25,6 +34,7 @@ namespace PatternSeer.ViewModels {
 
         public MainWindowViewModel() {
             Exit = ReactiveCommand.Create(OnExit);
-            OpenFilePicker = ReactiveCommand.Create(OnOpenFilePicker);
+            OpenFile = ReactiveCommand.CreateFromTask(OnOpenFile);
         }
     }
+}
