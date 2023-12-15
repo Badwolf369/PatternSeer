@@ -4,21 +4,23 @@ using Avalonia.Platform.Storage;
 
 namespace PatternSeer.Views {
     /// <summary>
-    /// 
+    /// Primary View used when launched as a desktop application.
     /// </summary>
     public partial class MainWindow : Window {
         /// <summary>
-        /// 
+        /// Initializes a new instance of the <c>MainWindow</c> class.
         /// </summary>
         public MainWindow() {
             InitializeComponent();
         }
 
         /// <summary>
-        /// 
+        /// Event that asynchronously opens the system's file picker.
+        /// Meant to be triggered as an event sent from the ViewModel.
+        /// Event trigger configured in the App layer.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="exitCallback"></param>
+        /// <param name="sender">Object that sent the event call.</param>
+        /// <param name="exitCallback">Callback function for when the event finishes.</param>
         public async void OpenSystemFilePickerAsync(Object sender, Action<Uri> exitCallback) {
             Console.WriteLine("Opening file selection dialogue");
 
