@@ -7,7 +7,7 @@ using Avalonia.ReactiveUI;
 
 namespace PatternSeer {
     /// <summary>
-    /// Class <c>Program</c> Main programs entry point.
+    /// Main entry point for the software.
     /// </summary>
     class Program {
         /// <summary>
@@ -51,18 +51,19 @@ namespace PatternSeer {
         }
 
         /// <summary>
-        /// 
+        /// Configures options for the creation of an Avalonia app.
         /// </summary>
-        /// <returns></returns>
-        public static AppBuilder BuildAvaloniaApp()
-            => AppBuilder.Configure<App>()
+        /// <returns>Configured Avalonia AppBuilder which
+        /// can be used to start the Avalonia app.</returns>
+        public static AppBuilder BuildAvaloniaApp() =>
+            AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .UseReactiveUI();
 
         /// <summary>
-        /// 
+        /// Takes command-line arguments and starts the program.
         /// </summary>
-        /// <param name="args"></param>
+        /// <param name="args">User's command-line input.</param>
         static void Main(string[] args) {
             BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
         }
