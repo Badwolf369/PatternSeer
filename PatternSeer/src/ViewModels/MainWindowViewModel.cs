@@ -46,7 +46,7 @@ namespace PatternSeer.ViewModels {
         /// for the associated callback to run.
         /// </summary>
         private async Task OpenFilePicker() {
-            OpenSystemFilePicker?.Invoke(this, CloseFilePicker);
+            OpenSystemFilePicker?.Invoke(this, OnFilePickerClose);
             callbackSignal = new SemaphoreSlim(0, 1);
             await callbackSignal.WaitAsync();
         }
@@ -55,7 +55,7 @@ namespace PatternSeer.ViewModels {
         /// when the user is finished picking the file.
         /// </summary>
         /// <param name="filePath">Path to the file picked by the user</param>
-        private void CloseFilePicker(Uri filePath) {
+        private void OnFilePickerClose(Uri filePath) {
             LoadedFile = filePath;
             callbackSignal.Release();
         }
