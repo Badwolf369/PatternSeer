@@ -21,13 +21,14 @@ namespace PatternSeer {
         /// Runs after the initial creation of the Avalonia app.
         /// </summary>
         public override void OnFrameworkInitializationCompleted() {
+            MainViewModel viewmodel = new MainViewModel();
+            MainWindow window = new MainWindow();
+
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
-                MainWindowViewModel vm = new MainWindowViewModel();
-                MainWindow window = new MainWindow() {
-                    DataContext = vm
-                };
+                window.DataContext = viewmodel;
+                viewmodel.PropertyChanged += window.OnViewModelUpdate;
+                viewmodel.PropertyChanged += viewmodel.OnViewModelUpdate;
                 desktop.MainWindow = window;
-                vm.OpenSystemFilePicker += window.OpenSystemFilePickerAsync;
             }
 
             base.OnFrameworkInitializationCompleted();

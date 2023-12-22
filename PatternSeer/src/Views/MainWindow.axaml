@@ -12,8 +12,8 @@
             <Button Content="File" Background="#f0f0f0">
                 <Button.Flyout>
                     <MenuFlyout>
-                        <MenuItem Header="Open" Command="{Binding OpenFile}"/>
-                        <MenuItem Header="Exit" Command="{Binding Exit}"/>
+                        <MenuItem Header="Open" Command="{Binding OpenFileCommand}"/>
+                        <MenuItem Header="Exit" Command="{Binding ExitCommand}"/>
                     </MenuFlyout>
                 </Button.Flyout>
             </Button>
