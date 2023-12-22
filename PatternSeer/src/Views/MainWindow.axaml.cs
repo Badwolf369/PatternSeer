@@ -37,8 +37,10 @@ namespace PatternSeer.Views
                 case nameof(MainViewModel.IsFilePickerOpen):
                     if (IsFilePickerOpen)
                     {
-                        var file = await OpenFilePickerAsync();
-                        OpenedFile = file;
+                        var file = await ViewUtils.OpenFilePickerAsync(
+                            TopLevel.GetTopLevel(this)
+                        );
+                        OpenedFilePath = file;
                         IsFilePickerOpen = false;
                     }
                     break;
@@ -55,44 +57,16 @@ namespace PatternSeer.Views
             set { SetValue(IsFilePickerOpenProperty, value); }
         }
         public static readonly AvaloniaProperty<Uri>
-            OpenedFileProperty = AvaloniaProperty.
-            Register<MainWindow, Uri>(nameof(OpenedFile));
-        public Uri OpenedFile
+            OpenedFilePathProperty = AvaloniaProperty.
+            Register<MainWindow, Uri>(nameof(OpenedFilePath));
+        /// <summary>
+        /// Path to the currently opened file
+        /// </summary>
+        public Uri OpenedFilePath
         {
-            get { return (Uri)GetValue(OpenedFileProperty); }
-            set { SetValue(OpenedFileProperty, value); }
+            get { return (Uri)GetValue(OpenedFilePathProperty); }
+            set { SetValue(OpenedFilePathProperty, value); }
         }
         /* #endregion ViewModel-synced properties */
-
-        /* #region File Picker */
-        /// <summary>
-        /// Asynchronously open the system's file picker, allowing only
-        /// one PDF file to be picked.
-        /// </summary>
-        /// <returns></returns>
-        public async Task<Uri> OpenFilePickerAsync()
-        {
-            Console.WriteLine("Opening file selection dialogue");
-
-            var topLevel = TopLevel.GetTopLevel(this);
-            var files = await topLevel.StorageProvider.OpenFilePickerAsync(
-                new FilePickerOpenOptions
-                {
-                    Title = "Open cross stitch chart PDF",
-                    AllowMultiple = false,
-                    FileTypeFilter = new[] { FilePickerFileTypes.Pdf }
-                });
-            Console.WriteLine("Closing file selection dialogue");
-
-            if (files.Count > 0)
-            {
-                return files[0].Path;
-            }
-            else
-            {
-                return null;
-            }
-        }
-        /* #endregion File Picker*/
     }
 }
