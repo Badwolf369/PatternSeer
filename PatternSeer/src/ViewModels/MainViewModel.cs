@@ -23,7 +23,7 @@ namespace PatternSeer.ViewModels
         /// File currently opened by the ViewModel.
         /// </summary>
         [ObservableProperty]
-        private Uri _openedFile;
+        private Uri _openedFilePath;
 
         /// <summary>
         /// Runs when an observable property in the ViewModel is updated.
@@ -61,9 +61,9 @@ namespace PatternSeer.ViewModels
 
             await FilePickerCloseSignal.WaitAsync();
 
-            if (OpenedFile is not null)
+            if (OpenedFilePath is not null)
             {
-                Console.WriteLine($"Picked {OpenedFile}");
+                Console.WriteLine($"Picked {OpenedFilePath}");
             }
             else
             {

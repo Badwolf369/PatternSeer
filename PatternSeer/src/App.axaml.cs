@@ -18,7 +18,7 @@ namespace PatternSeer {
         }
 
         /// <summary>
-        /// Runs after the initial creation of the Avalonia app.
+        /// Run after the initial creation of the Avalonia app is finished.
         /// </summary>
         public override void OnFrameworkInitializationCompleted() {
             MainViewModel viewmodel = new MainViewModel();

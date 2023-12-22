@@ -20,7 +20,7 @@ namespace PatternSeer.Views
             InitializeComponent();
             this.Bind(IsFilePickerOpenProperty, new Binding("IsFilePickerOpen")
                 { Mode = BindingMode.TwoWay });
-            this.Bind(OpenedFileProperty, new Binding("OpenedFile")
+            this.Bind(OpenedFilePathProperty, new Binding("OpenedFilePath")
                 { Mode = BindingMode.TwoWay });
         }
 
@@ -48,6 +48,9 @@ namespace PatternSeer.Views
         }
 
         /* #region ViewModel-synced properties */
+        /// <summary>
+        /// Avalonia property to sync IsFilePickerOpen with the view
+        /// </summary>
         public static readonly AvaloniaProperty<bool>
             IsFilePickerOpenProperty = AvaloniaProperty.
             Register<MainWindow, bool>(nameof(IsFilePickerOpen));
@@ -56,6 +59,9 @@ namespace PatternSeer.Views
             get { return (bool)GetValue(IsFilePickerOpenProperty); }
             set { SetValue(IsFilePickerOpenProperty, value); }
         }
+        /// <summary>
+        /// Avalonia property to sync OpenedFile with the view
+        /// </summary>
         public static readonly AvaloniaProperty<Uri>
             OpenedFilePathProperty = AvaloniaProperty.
             Register<MainWindow, Uri>(nameof(OpenedFilePath));
