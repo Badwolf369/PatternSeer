@@ -7,7 +7,22 @@
     <Panel>
         <Grid ColumnDefinitions="5*,2*">
             <Grid Grid.Column="0">
-                <Border Name="preview" Background="green" Grid.Row="0"/>
+                <ScrollViewer Name="preview" Grid.Row="0"
+                VerticalScrollBarVisibility="Auto">
+                    <ItemsControl>
+                        <ItemsControl.Items>
+                            <Border Background="Gray" Padding="50">
+                                <Image Source="\assets\DummyP1.png" />
+                            </Border>
+                            <Border Background="Gray" Padding="50">
+                                <Image Source="\assets\DummyP2.png" />
+                            </Border>
+                            <Border Background="Gray" Padding="50">
+                                <Image Source="\assets\DummyP3.png" />
+                            </Border>
+                        </ItemsControl.Items>
+                    </ItemsControl>
+                </ScrollViewer>
                 <Border Name="footer" Background="Red" 
                 VerticalAlignment="Bottom" Height="20" Grid.Row="1"/>
             </Grid>
