@@ -11,13 +11,13 @@
                 VerticalScrollBarVisibility="Auto">
                     <ItemsControl>
                         <ItemsControl.Items>
-                            <Border Background="Gray" Padding="50">
+                            <Border Background="LightGray" Padding="50">
                                 <Image Source="\assets\DummyP1.png" />
                             </Border>
-                            <Border Background="Gray" Padding="50">
+                            <Border Background="LightGray" Padding="50">
                                 <Image Source="\assets\DummyP2.png" />
                             </Border>
-                            <Border Background="Gray" Padding="50">
+                            <Border Background="LightGray" Padding="50">
                                 <Image Source="\assets\DummyP3.png" />
                             </Border>
                         </ItemsControl.Items>
