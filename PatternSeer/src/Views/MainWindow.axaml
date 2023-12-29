@@ -2,21 +2,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sys="clr-namespace:System;assembly=System.Runtime"
     x:Class="PatternSeer.Views.MainWindow"
-    x:Name="mainwindow"
-    Width="400" Height="300"
+    Width="800" Height="600"
     Title="PatternSeer" Icon="\assets\logo.ico">
     <Panel>
-        <StackPanel
-            VerticalAlignment="Top"
-            Orientation="Horizontal" Spacing="0" Background="#f0f0f0">
-            <Button Content="File" Background="#f0f0f0">
-                <Button.Flyout>
-                    <MenuFlyout>
-                        <MenuItem Header="Open" Command="{Binding OpenFileCommand}"/>
-                        <MenuItem Header="Exit" Command="{Binding ExitCommand}"/>
-                    </MenuFlyout>
-                </Button.Flyout>
-            </Button>
-        </StackPanel>
+        <Grid ColumnDefinitions="5*,2*">
+            <Grid Grid.Column="0">
+                <Border Name="preview" Background="green" Grid.Row="0"/>
+                <Border Name="footer" Background="Red" 
+                VerticalAlignment="Bottom" Height="20" Grid.Row="1"/>
+            </Grid>
+            <Border Name="info" Grid.Column="1" Background="Blue" />
+        </Grid>
     </Panel>
 </Window>
