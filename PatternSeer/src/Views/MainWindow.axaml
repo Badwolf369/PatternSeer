@@ -5,9 +5,9 @@
     Width="800" Height="600"
     Title="PatternSeer" Icon="\assets\logo.ico">
     <Panel>
-        <Grid ColumnDefinitions="5*,2*">
-            <TabControl Name="Viewers" Grid.Column="0">
-                <TabItem Name="PdfViewer" Header="PDF File">
+        <Grid ColumnDefinitions="5*,1,2*">
+            <TabControl Name="Viewers" Grid.Column="0" Padding="0">
+                <TabItem Name="PdfViewer" Header="PDF">
                     <Grid>
                         <ScrollViewer Grid.Row="0"
                         VerticalScrollBarVisibility="Auto">
@@ -29,14 +29,29 @@
                         VerticalAlignment="Bottom" Height="20" Grid.Row="1" />
                     </Grid>
                 </TabItem>
-                <TabItem Name="PatternViewer" Header="Pattern Preview">
+                <TabItem Name="PatternViewer" Header="Pattern">
                 </TabItem>
             </TabControl>
-            <ScrollViewer Name="info" Grid.Column="1">
+            <Rectangle Grid.Column="1" Width="1" Fill="DarkGray"/>
+            <ScrollViewer Name="InfoPanel" Grid.Column="2" Padding="5">
                 <StackPanel>
-                    <Border Name="importButtons" Background="Red"
-                    Height="100" />
-                    <!-- <Border Name="" /> -->
+                    <StackPanel Name="ImportButtons">
+                        <TextBlock>Import</TextBlock>
+                        <Grid ColumnDefinitions="*,*">
+                            <Button Grid.Column="0" Content="From PDF" Margin="2"
+                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+                            <Button Grid.Column="1" Content="From Images" Margin="2"
+                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+                    <Border Name="PatternInfo" Background="Green"
+                    Height="50" />
+                    <Border Name="PageOverlap" Background="Blue"
+                    Height="50" />
+                    <Border Name="ChartKey" Background="Red"
+                    Height="200" />
+                    <Border Name="ExportButton" Background="Green"
+                    Height="25" />
                 </StackPanel>
             </ScrollViewer>
         </Grid>
