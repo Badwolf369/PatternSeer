@@ -6,27 +6,39 @@
     Title="PatternSeer" Icon="\assets\logo.ico">
     <Panel>
         <Grid ColumnDefinitions="5*,2*">
-            <Grid Grid.Column="0">
-                <ScrollViewer Name="preview" Grid.Row="0"
-                VerticalScrollBarVisibility="Auto">
-                    <ItemsControl>
-                        <ItemsControl.Items>
-                            <Border Background="LightGray" Padding="50">
-                                <Image Source="\assets\DummyP1.png" />
-                            </Border>
-                            <Border Background="LightGray" Padding="50">
-                                <Image Source="\assets\DummyP2.png" />
-                            </Border>
-                            <Border Background="LightGray" Padding="50">
-                                <Image Source="\assets\DummyP3.png" />
-                            </Border>
-                        </ItemsControl.Items>
-                    </ItemsControl>
-                </ScrollViewer>
-                <Border Name="footer" Background="Red" 
-                VerticalAlignment="Bottom" Height="20" Grid.Row="1"/>
-            </Grid>
-            <Border Name="info" Grid.Column="1" Background="Blue" />
+            <TabControl Name="Viewers" Grid.Column="0">
+                <TabItem Name="PdfViewer" Header="PDF File">
+                    <Grid>
+                        <ScrollViewer Grid.Row="0"
+                        VerticalScrollBarVisibility="Auto">
+                            <ItemsControl>
+                                <ItemsControl.Items>
+                                    <Border Background="LightGray" Padding="50">
+                                        <Image Source="\assets\DummyP1.png" />
+                                    </Border>
+                                    <Border Background="LightGray" Padding="50">
+                                        <Image Source="\assets\DummyP2.png" />
+                                    </Border>
+                                    <Border Background="LightGray" Padding="50">
+                                        <Image Source="\assets\DummyP3.png" />
+                                    </Border>
+                                </ItemsControl.Items>
+                            </ItemsControl>
+                        </ScrollViewer>
+                        <Border Name="PdfViewerFooter" Background="Red" 
+                        VerticalAlignment="Bottom" Height="20" Grid.Row="1" />
+                    </Grid>
+                </TabItem>
+                <TabItem Name="PatternViewer" Header="Pattern Preview">
+                </TabItem>
+            </TabControl>
+            <ScrollViewer Name="info" Grid.Column="1">
+                <StackPanel>
+                    <Border Name="importButtons" Background="Red"
+                    Height="100" />
+                    <!-- <Border Name="" /> -->
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
     </Panel>
 </Window>
