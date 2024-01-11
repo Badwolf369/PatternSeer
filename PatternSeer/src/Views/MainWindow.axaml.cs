@@ -2,7 +2,6 @@ using System.ComponentModel;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
-using Avalonia.Platform.Storage;
 using PatternSeer.ViewModels;
 
 namespace PatternSeer.Views
