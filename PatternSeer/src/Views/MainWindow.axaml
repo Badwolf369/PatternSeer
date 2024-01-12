@@ -1,6 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+    xmlns:paz="using:Avalonia.Controls.PanAndZoom"
     x:Class="PatternSeer.Views.MainWindow"
     Width="800" Height="600"
     Title="PatternSeer" Icon="\assets\logo.ico">
@@ -8,13 +9,12 @@
         <Grid ColumnDefinitions="5*,1,2*">
             <TabControl Name="Viewers" Grid.Column="0" Padding="0">
                 <TabItem Name="PdfViewer" Header="PDF">
-                    <Grid>
-                        <ScrollViewer Grid.Row="0"
-                        VerticalScrollBarVisibility="Auto">
+                    <Grid RowDefinitions="*,1,25">
+                        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
                             <ItemsControl>
                                 <ItemsControl.Items>
                                     <Border Background="LightGray" Padding="50">
-                                        <Image Source="\assets\DummyP1.png" />
+                                        <Image Source="\assets\DummyP1.png" Stretch="Uniform"/>
                                     </Border>
                                     <Border Background="LightGray" Padding="50">
                                         <Image Source="\assets\DummyP2.png" />
@@ -25,8 +25,18 @@
                                 </ItemsControl.Items>
                             </ItemsControl>
                         </ScrollViewer>
-                        <Border Name="PdfViewerFooter" Background="Red" 
-                        VerticalAlignment="Bottom" Height="20" Grid.Row="1" />
+                        <Rectangle Grid.Row="1" Fill="DarkGray" />
+                        <Grid Grid.Row="2" Name="PdfViewerFooter" Height="25"
+                        ColumnDefinitions="1*,1,1*,1,1*" VerticalAlignment="Bottom">
+                            <TextBlock Grid.Column="0" Text="Zoom: 100%"
+                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Rectangle Grid.Column="1" Fill="DarkGray" />
+                            <TextBlock Grid.Column="2" Text="C:/Path/file.pdf"
+                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Rectangle Grid.Column="3" Fill="DarkGray" />
+                            <TextBlock Grid.Column="4" Text="Page 0"
+                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
                     </Grid>
                 </TabItem>
                 <TabItem Name="PatternViewer" Header="Pattern">
