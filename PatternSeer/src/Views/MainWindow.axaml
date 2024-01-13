@@ -11,30 +11,26 @@
                 <TabItem Name="PdfViewer" Header="PDF">
                     <Grid RowDefinitions="*,1,25">
                         <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
-                            <ItemsControl>
-                                <ItemsControl.Items>
-                                    <Border Background="LightGray" Padding="50">
-                                        <Image Source="\assets\DummyP1.png" Stretch="Uniform"/>
-                                    </Border>
-                                    <Border Background="LightGray" Padding="50">
-                                        <Image Source="\assets\DummyP2.png" />
-                                    </Border>
-                                    <Border Background="LightGray" Padding="50">
-                                        <Image Source="\assets\DummyP3.png" />
-                                    </Border>
-                                </ItemsControl.Items>
+                            <ItemsControl ItemsSource="{Binding PdfPages}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Background="LightGray" Padding="50">
+                                            <Image Source="{Binding}" Stretch="Uniform" Width="100" />
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
                             </ItemsControl>
                         </ScrollViewer>
                         <Rectangle Grid.Row="1" Fill="DarkGray" />
                         <Grid Grid.Row="2" Name="PdfViewerFooter" Height="25"
-                        ColumnDefinitions="1*,1,1*,1,1*" VerticalAlignment="Bottom">
-                            <TextBlock Grid.Column="0" Text="Zoom: 100%"
+                        ColumnDefinitions="1.5*,1,5*,1,1*" VerticalAlignment="Bottom">
+                            <TextBlock Grid.Column="0" Text="{Binding PdfZoomLevel}" Padding="10,0"
                             HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Rectangle Grid.Column="1" Fill="DarkGray" />
-                            <TextBlock Grid.Column="2" Text="C:/Path/file.pdf"
+                            <TextBlock Grid.Column="2" Text="{Binding PdfFilePath}"
                             HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Rectangle Grid.Column="3" Fill="DarkGray" />
-                            <TextBlock Grid.Column="4" Text="Page 0"
+                            <TextBlock Grid.Column="4" Text="{Binding VisiblePdfPage}"
                             HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
                     </Grid>
@@ -49,7 +45,8 @@
                         <TextBlock Text="Import" />
                         <Grid ColumnDefinitions="*,*">
                             <Button Grid.Column="0" Content="From PDF" Margin="2"
-                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                            Command="{Binding InfImportPdf}" />
                             <Button Grid.Column="1" Content="From Images" Margin="2"
                             HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
                         </Grid>

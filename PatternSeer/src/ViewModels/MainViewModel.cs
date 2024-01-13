@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Reactive;
 using System.Runtime.CompilerServices;
@@ -24,6 +25,15 @@ namespace PatternSeer.ViewModels
         /// </summary>
         [ObservableProperty]
         private Uri _openedFilePath;
+
+        [ObservableProperty]
+        private ObservableCollection<string> _pdfPages;
+        [ObservableProperty]
+        private string _pdfZoomLevel = "Zoom: 100%";
+        [ObservableProperty]
+        private string _pdfFilePath = "C:\\Path\\file.pdf";
+        [ObservableProperty]
+        private string _visiblePdfPage = "Page 0";
 
         /// <summary>
         /// Runs when an observable property in the ViewModel is updated.
@@ -91,6 +101,11 @@ namespace PatternSeer.ViewModels
         public MainViewModel()
         {
             IsFilePickerOpen = false;
+            PdfPages = new ObservableCollection<string>(new List<string> {
+                "\\assets\\DummyP1.png",
+                "\\assets\\DummyP2.png",
+                "\\assets\\DummyP3.png"
+            });
         }
     }
 }
