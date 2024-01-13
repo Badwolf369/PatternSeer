@@ -46,7 +46,7 @@
                         <Grid ColumnDefinitions="*,*">
                             <Button Grid.Column="0" Content="From PDF" Margin="2"
                             HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
-                            Command="{Binding InfImportPdf}" />
+                            Command="{Binding ImportPdfCommand}" />
                             <Button Grid.Column="1" Content="From Images" Margin="2"
                             HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
                         </Grid>
@@ -74,3 +74,4 @@
             </ScrollViewer>
         </Grid>
     </Panel>
+</Window>

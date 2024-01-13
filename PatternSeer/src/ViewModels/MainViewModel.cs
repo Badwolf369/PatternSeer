@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Reactive;
 using System.Runtime.CompilerServices;
+using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ReactiveUI;
@@ -24,14 +25,14 @@ namespace PatternSeer.ViewModels
         /// File currently opened by the ViewModel.
         /// </summary>
         [ObservableProperty]
-        private Uri _openedFilePath;
+        private Uri _openedPattern;
 
         [ObservableProperty]
-        private ObservableCollection<string> _pdfPages;
+        private ObservableCollection<Bitmap> _pdfPages;
         [ObservableProperty]
         private string _pdfZoomLevel = "Zoom: 100%";
         [ObservableProperty]
-        private string _pdfFilePath = "C:\\Path\\file.pdf";
+        private Uri _pdfFilePath;
         [ObservableProperty]
         private string _visiblePdfPage = "Page 0";
 
@@ -54,9 +55,9 @@ namespace PatternSeer.ViewModels
         /* #endregion Observable Properties */
 
 
-        /* #region Open File Command */
+        /* #region PDF Import Command */
         /// <summary>
-        /// Signal to allow the Openfile command to pause and wait until
+        /// Signal to allow the ImportPdf command to pause and wait until
         /// the file picker closes.
         /// </summary>
         private SemaphoreSlim FilePickerCloseSignal;
@@ -64,23 +65,24 @@ namespace PatternSeer.ViewModels
         /// Open a file picker then print the path to the picked file.
         /// </summary>
         [RelayCommand]
-        private async void OpenFile()
+        private async void ImportPdf()
         {
             IsFilePickerOpen = true;
             FilePickerCloseSignal = new SemaphoreSlim(0, 1);
 
             await FilePickerCloseSignal.WaitAsync();
 
-            if (OpenedFilePath is not null)
+            if (OpenedPattern is not null)
             {
-                Console.WriteLine($"Picked {OpenedFilePath}");
+                Console.WriteLine($"Picked {OpenedPattern}");
+                PdfFilePath = OpenedPattern;
             }
             else
             {
                 Console.WriteLine("No file was picked");
             }
         }
-        /* #endregion Open File Command */
+        /* #endregion PDF Import Command */
 
         /* #region Exit Command */
         /// <summary>
