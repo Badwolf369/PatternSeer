@@ -101,11 +101,11 @@ namespace PatternSeer.ViewModels
         public MainViewModel()
         {
             IsFilePickerOpen = false;
-            PdfPages = new ObservableCollection<string>(new List<string> {
-                "\\assets\\DummyP1.png",
-                "\\assets\\DummyP2.png",
-                "\\assets\\DummyP3.png"
-            });
+            PdfPages = new ObservableCollection<Bitmap>{
+                Util.LoadImageAsBitmap("C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\PatternSeer\\PatternSeer\\assets\\DummyP1.png"),
+                Util.LoadImageAsBitmap("C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\PatternSeer\\PatternSeer\\assets\\DummyP2.png"),
+                Util.LoadImageAsBitmap("C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\PatternSeer\\PatternSeer\\assets\\DummyP3.png")
+            };
         }
     }
 }

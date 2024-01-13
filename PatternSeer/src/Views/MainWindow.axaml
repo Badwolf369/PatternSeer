@@ -15,7 +15,7 @@
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
                                         <Border Background="LightGray" Padding="50">
-                                            <Image Source="{Binding}" Stretch="Uniform" Width="100" />
+                                            <Image Source="{Binding}" Stretch="Uniform" />
                                         </Border>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -74,4 +74,3 @@
             </ScrollViewer>
         </Grid>
     </Panel>
-</Window>

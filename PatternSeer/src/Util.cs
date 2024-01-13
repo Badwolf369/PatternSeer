@@ -1,3 +1,6 @@
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
+
 namespace PatternSeer {
     class Util {
         public static bool validPdfFile(string pdfAddress) {
@@ -10,6 +13,11 @@ namespace PatternSeer {
             else {
                 return true;
             }
+        }
+
+        public static Bitmap LoadImageAsBitmap(string path) {
+            using var stream = File.OpenRead(path);
+            return new Bitmap(stream);
         }
     }
 }
