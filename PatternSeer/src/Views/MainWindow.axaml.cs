@@ -17,9 +17,9 @@ namespace PatternSeer.Views
         public MainWindow()
         {
             InitializeComponent();
-            this.Bind(IsFilePickerOpenProperty, new Binding("IsFilePickerOpen")
+            this.Bind(IsPdfPickerOpenProperty, new Binding("IsPdfPickerOpen")
                 { Mode = BindingMode.TwoWay });
-            this.Bind(OpenedPatternProperty, new Binding("OpenedPattern")
+            this.Bind(PdfFilePathProperty, new Binding("PdfFilePath")
                 { Mode = BindingMode.TwoWay });
         }
 
@@ -33,14 +33,14 @@ namespace PatternSeer.Views
         {
             switch (e.PropertyName)
             {
-                case nameof(MainViewModel.IsFilePickerOpen):
-                    if (IsFilePickerOpen)
+                case nameof(MainViewModel.IsPdfPickerOpen):
+                    if (IsPdfPickerOpen)
                     {
                         var file = await ViewUtils.OpenFilePickerAsync(
                             TopLevel.GetTopLevel(this)
                         );
-                        OpenedPattern = file;
-                        IsFilePickerOpen = false;
+                        PdfFilePath = file;
+                        IsPdfPickerOpen = false;
                     }
                     break;
             }
@@ -48,29 +48,29 @@ namespace PatternSeer.Views
 
         /* #region ViewModel-synced properties */
         /// <summary>
-        /// Avalonia property to sync IsFilePickerOpen with the view
+        /// Avalonia property to sync IsPdfPickerOpen with the view
         /// </summary>
         public static readonly AvaloniaProperty<bool>
-            IsFilePickerOpenProperty = AvaloniaProperty.
-            Register<MainWindow, bool>(nameof(IsFilePickerOpen));
-        public bool IsFilePickerOpen
+            IsPdfPickerOpenProperty = AvaloniaProperty.
+            Register<MainWindow, bool>(nameof(IsPdfPickerOpen));
+        public bool IsPdfPickerOpen
         {
-            get { return (bool)GetValue(IsFilePickerOpenProperty); }
-            set { SetValue(IsFilePickerOpenProperty, value); }
+            get { return (bool)GetValue(IsPdfPickerOpenProperty); }
+            set { SetValue(IsPdfPickerOpenProperty, value); }
         }
         /// <summary>
         /// Avalonia property to sync OpenedFile with the view
         /// </summary>
         public static readonly AvaloniaProperty<Uri>
-            OpenedPatternProperty = AvaloniaProperty.
-            Register<MainWindow, Uri>(nameof(OpenedPattern));
+            PdfFilePathProperty = AvaloniaProperty.
+            Register<MainWindow, Uri>(nameof(PdfFilePath));
         /// <summary>
         /// Path to the currently opened file
         /// </summary>
-        public Uri OpenedPattern
+        public Uri PdfFilePath
         {
-            get { return (Uri)GetValue(OpenedPatternProperty); }
-            set { SetValue(OpenedPatternProperty, value); }
+            get { return (Uri)GetValue(PdfFilePathProperty); }
+            set { SetValue(PdfFilePathProperty, value); }
         }
         /* #endregion ViewModel-synced properties */
     }
