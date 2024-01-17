@@ -8,6 +8,10 @@ PatternSeer/obj
 # C extensions
 *.so
 
+# binaries and other assemblies
+*/bin
+*/obj
+
 # Distribution / packaging
 .Python
 experiments/
