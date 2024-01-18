@@ -2,7 +2,7 @@ using System.Dynamic;
 using System.Reflection;
 
 namespace PatternSeer.Models {
-    class KeySymbol {
+    public class KeySymbol {
         //TODO: Int here shall be replaced with the OpenCV image type
         private int Image;
         private string ThreadColor = "";

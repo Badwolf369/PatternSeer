@@ -1,5 +1,5 @@
 namespace PatternSeer.Models {
-    class ChartKey {
+    public class ChartKey {
         //TODO: Int here shall be replaced with the OpenCV image type
         private int SourceImage;
         private KeySymbol[] Symbols = {};

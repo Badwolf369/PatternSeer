@@ -1,5 +1,5 @@
 namespace PatternSeer.Models {
-    class ChartPattern {
+    public class ChartPattern {
         //TODO: Int here shall be replaced with the OpenCV image type
         private List<List<int>> SourceImages;
         private int[] Size = {0, 0};
