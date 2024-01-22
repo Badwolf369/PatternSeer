@@ -1,13 +1,10 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Reactive;
-using System.Runtime.CompilerServices;
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PatternSeer.Models;
-using ReactiveUI;
 
 
 namespace PatternSeer.ViewModels
