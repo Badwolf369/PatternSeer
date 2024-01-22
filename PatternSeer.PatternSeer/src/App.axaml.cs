@@ -4,34 +4,33 @@ using Avalonia.Markup.Xaml;
 using PatternSeer.Views;
 using PatternSeer.ViewModels;
 
+namespace PatternSeer;
 
-namespace PatternSeer {
+/// <summary>
+/// Main wrapper for an Avalonia app.
+/// </summary>
+public partial class App : Application {
     /// <summary>
-    /// Main wrapper for an Avalonia app.
+    /// Initializes the Avalonia app.
     /// </summary>
-    public partial class App : Application {
-        /// <summary>
-        /// Initializes the Avalonia app.
-        /// </summary>
-        public override void Initialize() {
-            AvaloniaXamlLoader.Load(this);
+    public override void Initialize() {
+        AvaloniaXamlLoader.Load(this);
+    }
+
+    /// <summary>
+    /// Run after the initial creation of the Avalonia app is finished.
+    /// </summary>
+    public override void OnFrameworkInitializationCompleted() {
+        MainViewModel viewmodel = new MainViewModel();
+        MainWindow window = new MainWindow();
+
+        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
+            window.DataContext = viewmodel;
+            viewmodel.PropertyChanged += window.OnViewModelUpdate;
+            viewmodel.PropertyChanged += viewmodel.OnViewModelUpdate;
+            desktop.MainWindow = window;
         }
 
-        /// <summary>
-        /// Run after the initial creation of the Avalonia app is finished.
-        /// </summary>
-        public override void OnFrameworkInitializationCompleted() {
-            MainViewModel viewmodel = new MainViewModel();
-            MainWindow window = new MainWindow();
-
-            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
-                window.DataContext = viewmodel;
-                viewmodel.PropertyChanged += window.OnViewModelUpdate;
-                viewmodel.PropertyChanged += viewmodel.OnViewModelUpdate;
-                desktop.MainWindow = window;
-            }
-
-            base.OnFrameworkInitializationCompleted();
-        }
+        base.OnFrameworkInitializationCompleted();
     }
 }

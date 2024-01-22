@@ -1,10 +1,9 @@
 using Avalonia.Controls;
 
+namespace PatternSeer.Views;
 
-namespace PatternSeer.Views {
-    public partial class MainView : UserControl {
-        public MainView() {
-            InitializeComponent();
-        }
+public partial class MainView : UserControl {
+    public MainView() {
+        InitializeComponent();
     }
 }
