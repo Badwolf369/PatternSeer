@@ -1,3 +1,5 @@
+To do before the next pull request
+
 [ ] Update documentation
     [ ] Chart.cs
     [ ] MainViewModel.cs
@@ -31,3 +33,4 @@
     [ ] Reorganize MainViewModel so that like things are near one another
     [ ] Reorganize MainWindow so that like things are near one another
     [ ] Organize sections under region tags
+[ ] Make the imported pdf appear in the pdf viewer
