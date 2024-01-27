@@ -17,7 +17,8 @@
         <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.2" />
         <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.2" />
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-        <PackageReference Include="Emgu.CV.runtime.windows" Version="4.8.0.5324" />
+        <PackageReference Include="Emgu.CV" Version="4.8.1.5350" />
+        <PackageReference Include="Emgu.CV.runtime.windows" Version="4.8.1.5350" />
         <PackageReference Include="PDFtoImage" Version="2.4.2" />
         <AvaloniaResource Include="assets\**" />
     </ItemGroup>
