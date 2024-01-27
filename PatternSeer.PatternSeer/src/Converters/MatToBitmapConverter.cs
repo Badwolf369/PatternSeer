@@ -6,7 +6,7 @@ using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Util;
 
-namespace patternSeer.Converters;
+namespace PatternSeer.Converters;
 
 /// <summary>
 /// Value converter that converts from Emgu.CV.Mat to
