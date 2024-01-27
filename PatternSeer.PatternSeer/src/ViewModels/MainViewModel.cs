@@ -80,19 +80,6 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
     }
     /* #endregion PDF Import Command */
 
-    /* #region Exit Command */
-    /// <summary>
-    /// Command associated with the Exit trigger. Prints a message and
-    /// then exits the program.
-    /// </summary>
-    [RelayCommand]
-    private static void Exit()
-    {
-        Console.WriteLine("Goodbye ):");
-        Environment.Exit(0);
-    }
-    /* #endregion Exit Command */
-
     /// <summary>
     /// Initialize a new instance of the <c>MainWindowViewModel</c> class.
     /// </summary>
