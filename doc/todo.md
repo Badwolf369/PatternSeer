@@ -12,12 +12,10 @@ To do before the next pull request
         [ ] Working test
         [ ] Non-mat input
         [ ] Non-bitmap expected output type
-        [ ] Both Non-mat input and Non-bitmap expected output type
     [ ] MatToBitmapConverter.ConvertBack()
         [ ] Working test
         [ ] Non-bitmap input
         [ ] Non-mat expected output type
-        [ ] Both Non-bitmap input and Non-mat expected output type
     [ ] MainViewModel update event runs when
         [ ] IsPdfPickerOpen updates
         [ ] PdfFilePath updates
