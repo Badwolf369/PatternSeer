@@ -9,7 +9,7 @@ namespace PatternSeer.Models;
 /// </summary>
 public class Chart {
     private string PdfPath;
-    private List<Mat> PdfPages;
+    public List<Mat> PdfPages;
     public int PageCount;
     private ChartPattern Pattern;
     private ChartKey Key;
@@ -21,7 +21,7 @@ public class Chart {
         return Key;
     }
 
-    private void ImportPdf(string path) {
+    public void ImportPdf(string path) {
         if (!path.EndsWith(".pdf")) throw new ArgumentOutOfRangeException(
             $"Error: expected a PDF file, got {path}"
         );
@@ -42,9 +42,8 @@ public class Chart {
         PageCount = PdfPages.Count();
     }
 
-    public Chart(string path)
+    public Chart()
     {
         PdfPages = new List<Mat>();
-        ImportPdf(path);
     }
 }

@@ -36,10 +36,9 @@ public partial class MainWindow : Window
             case nameof(MainViewModel.IsPdfPickerOpen):
                 if (IsPdfPickerOpen)
                 {
-                    var file = await ViewUtils.OpenFilePickerAsync(
+                    PdfFilePath = await ViewUtils.OpenFilePickerAsync(
                         TopLevel.GetTopLevel(this)
                     );
-                    PdfFilePath = file;
                     IsPdfPickerOpen = false;
                 }
                 break;
@@ -61,15 +60,15 @@ public partial class MainWindow : Window
     /// <summary>
     /// Avalonia property to sync OpenedFile with the view
     /// </summary>
-    public static readonly AvaloniaProperty<Uri>
+    public static readonly AvaloniaProperty<string>
         PdfFilePathProperty = AvaloniaProperty.
-        Register<MainWindow, Uri>(nameof(PdfFilePath));
+        Register<MainWindow, string>(nameof(PdfFilePath));
     /// <summary>
     /// Path to the currently opened file
     /// </summary>
-    public Uri PdfFilePath
+    public string PdfFilePath
     {
-        get { return (Uri)GetValue(PdfFilePathProperty); }
+        get { return (string)GetValue(PdfFilePathProperty); }
         set { SetValue(PdfFilePathProperty, value); }
     }
     /* #endregion ViewModel-synced properties */

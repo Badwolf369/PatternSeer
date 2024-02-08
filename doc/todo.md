@@ -9,7 +9,7 @@ To do before the next pull request
     [ ] ViewUtils.cs
 [ ] Create unit tests
     [ ] MatToBitmapConverter.Convert()
-        [ ] Working test
+        [ ] Working tests
         [ ] Non-mat input
         [ ] Non-bitmap expected output type
     [ ] MatToBitmapConverter.ConvertBack()
@@ -31,4 +31,4 @@ To do before the next pull request
     [ ] Reorganize MainViewModel so that like things are near one another
     [ ] Reorganize MainWindow so that like things are near one another
     [ ] Organize sections under region tags
-[ ] Make the imported pdf appear in the pdf viewer
+[-] Make the imported pdf appear in the pdf viewer

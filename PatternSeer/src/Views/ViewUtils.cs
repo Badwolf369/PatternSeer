@@ -9,7 +9,7 @@ public class ViewUtils {
     /// one PDF file to be picked.
     /// </summary>
     /// <returns>Path to the opened PDF file</returns>
-    public static async Task<Uri> OpenFilePickerAsync(TopLevel topLevel)
+    public static async Task<string> OpenFilePickerAsync(TopLevel topLevel)
     {
         Console.WriteLine("Opening file selection dialogue");
         var files = await topLevel.StorageProvider.OpenFilePickerAsync(
@@ -23,7 +23,7 @@ public class ViewUtils {
 
         if (files.Count > 0)
         {
-            return files[0].Path;
+            return files[0].Path.ToString().Remove(0, 8);
         }
         else
         {

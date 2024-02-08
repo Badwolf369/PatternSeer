@@ -1,9 +1,9 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
-using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Emgu.CV;
 using PatternSeer.Models;
 
 
@@ -24,43 +24,27 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
     /// Path to the PDF file currently opened by the ViewModel.
     /// </summary>
     [ObservableProperty]
-    private Uri _pdfFilePath;
+    private string _pdfFilePath;
 
     [ObservableProperty]
-    private ObservableCollection<Bitmap> _pdfPages;
+    private ObservableCollection<Mat> _pdfPages;
     [ObservableProperty]
     private string _pdfZoomLevel = "Zoom: 100%";
     [ObservableProperty]
     private string _visiblePdfPage = "Page 0";
-
-    /// <summary>
-    /// Runs when an observable property in the ViewModel is updated.
-    /// </summary>
-    /// <param name="sender">ViewModel that was updated.</param>
-    /// <param name="e">Arguments related to the event.</param>
-    public void OnViewModelUpdate(object sender, PropertyChangedEventArgs e)
-    {
-        switch (e.PropertyName)
-        {
-            // When IsfilePicker is updated to false, release a signal
-            // to everything waiting for the file picker to close
-            case (nameof(IsPdfPickerOpen)):
-                if (!IsPdfPickerOpen) PdfPickerCloseSignal.Release();
-                break;
-        }
-    }
     /* #endregion Observable Properties */
 
     /* #region Private Properties */
-    private Chart OpenedPattern;
-    /* #endregion Private Properties */
-
-    /* #region PDF Import Command */
+    private Chart _chart;
     /// <summary>
     /// Signal to allow the ImportPdf command to pause and wait until
     /// the file picker closes.
     /// </summary>
-    private SemaphoreSlim PdfPickerCloseSignal;
+    private SemaphoreSlim PdfPickerThreads;
+    /* #endregion Private Properties */
+
+    /* #region PDF Import Command */
+
     /// <summary>
     /// Open a file picker then print the path to the picked file.
     /// </summary>
@@ -68,12 +52,13 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
     private async void ImportPdf()
     {
         IsPdfPickerOpen = true;
-        PdfPickerCloseSignal = new SemaphoreSlim(0, 1);
-        await PdfPickerCloseSignal.WaitAsync();
+        PdfPickerThreads = new SemaphoreSlim(1, 2);
+        await PdfPickerThreads.WaitAsync();
 
         if (PdfFilePath is not null) {
             Debug.WriteLine($"Picked {PdfFilePath}");
-            // OpenedPattern = new Chart(PdfFilePath);
+            _chart.ImportPdf(PdfFilePath);
+            // PdfPages = new ObservableCollection<Mat>(_chart.PdfPages);
         } else {
             Debug.WriteLine("No file was picked");
         }
@@ -81,16 +66,29 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
     /* #endregion PDF Import Command */
 
     /// <summary>
+    /// Runs when an observable property in the ViewModel is updated.
+    /// </summary>
+    /// <param name="sender">ViewModel property that was updated.</param>
+    /// <param name="e">Arguments related to the event caller.</param>
+    public void OnViewModelUpdate(object sender, PropertyChangedEventArgs e)
+    {
+        switch (e.PropertyName)
+        {
+            // When IsPdfPickerOpen is updated to false, release a semaphore
+            // to everything waiting for the pdf picker to close
+            case (nameof(IsPdfPickerOpen)):
+                if (!IsPdfPickerOpen) PdfPickerThreads.Release();
+                break;
+        }
+    }
+
+    /// <summary>
     /// Initialize a new instance of the <c>MainWindowViewModel</c> class.
     /// </summary>
     public MainViewModel()
     {
         IsPdfPickerOpen = false;
-        PdfPages = new ObservableCollection<Bitmap>{
-            Util.LoadImageAsBitmap("C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\PatternSeer\\PatternSeer.PatternSeer\\assets\\DummyP1.png"),
-            Util.LoadImageAsBitmap("C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\PatternSeer\\PatternSeer.PatternSeer\\assets\\DummyP2.png"),
-            Util.LoadImageAsBitmap("C:\\Users\\samwi\\Desktop\\Programming\\Experiments\\PatternSeer\\PatternSeer.PatternSeer\\assets\\DummyP3.png")
-        };
+        _chart = new Chart();
     }
 }
 

@@ -12,7 +12,7 @@ namespace PatternSeer.Converters;
 /// Value converter that converts from Emgu.CV.Mat to
 /// Avalonia.Media.Imaging.Bitmap.
 /// </summary>
-class MatToBitmapConverter : IValueConverter {
+public class MatToBitmapConverter : IValueConverter {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         if (value is Mat mat && targetType == typeof(Bitmap))
@@ -20,13 +20,15 @@ class MatToBitmapConverter : IValueConverter {
             using (MemoryStream imageStream = new MemoryStream())
             {
                 VectorOfByte matBytes = new VectorOfByte();
-                CvInvoke.Imencode("png", mat, matBytes);
+                CvInvoke.Imencode(".png", mat, matBytes);
                 imageStream.Write(matBytes.ToArray());
                 return new Bitmap(imageStream);
             }
         }
-
-        return AvaloniaProperty.UnsetValue;
+        else
+        {
+            return AvaloniaProperty.UnsetValue;
+        }
     }
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
