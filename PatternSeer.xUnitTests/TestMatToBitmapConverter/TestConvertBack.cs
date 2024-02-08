@@ -10,35 +10,27 @@ namespace TestMatToBitmapConverter;
 
 public class TestConvertBack
 {
-    [AvaloniaFact]
-    public void TestValidArguments()
+    [AvaloniaTheory]
+    [InlineData("ffffff.png")]
+    [InlineData("ffff00.png")]
+    [InlineData("ff00ff.png")]
+    [InlineData("00ffff.png")]
+    [InlineData("ff0000.png")]
+    [InlineData("00ff00.png")]
+    [InlineData("0000ff.png")]
+    [InlineData("000000.png")]
+    public void TestValidArguments(string imageName)
     {
-        // string imageName = "ffffff.png";
-        // string imagePath = Path.GetFullPath("../../../test assets/" + imageName);
-        // Mat expectedMat = CvInvoke.Imread(imagePath);
-
-        // MatToBitmapConverter converter = new MatToBitmapConverter();
-        // Bitmap bitmap = new Bitmap(imagePath);
-        // Mat convertedMat = (Mat)converter.ConvertBack(
-        //     bitmap, typeof(Mat), null, CultureInfo.CurrentCulture);
-
-        // convertedMat.Should().BeEquivalentTo(expectedMat);
-
-        string imageName = "ffffff.png";
         string imagePath = Path.GetFullPath("../../../test assets/" + imageName);
+        Mat expectedMat = CvInvoke.Imread(imagePath);
 
-        // Bitmap created directly from file
-        Bitmap fileBitmap = new Bitmap(imagePath);
+        MatToBitmapConverter converter = new MatToBitmapConverter();
+        Bitmap bitmap = new Bitmap(imagePath);
+        Mat convertedMat = (Mat)converter.ConvertBack(
+            bitmap, typeof(Mat), null, CultureInfo.CurrentCulture);
 
-        // Bitmap created from memeory stream of file bytes
-        byte[] imageBytes = File.ReadAllBytes(imagePath);
-        MemoryStream imageStream = new MemoryStream(imageBytes);
-        Bitmap streamBitmap = new Bitmap(imageStream);
-
-
-        imageStream = new MemoryStream();
-        fileBitmap.Save(imageStream);
-        imageStream = new MemoryStream();
-        streamBitmap.Save(imageStream);
+        convertedMat.Should().BeEquivalentTo(expectedMat, options => options
+            .Excluding(img => img.DataPointer)
+            .Excluding(img => img.Ptr));
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Emgu.CV;
@@ -27,7 +28,7 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
     private string _pdfFilePath;
 
     [ObservableProperty]
-    private ObservableCollection<Mat> _pdfPages;
+    private ObservableCollection<Bitmap> _pdfPages;
     [ObservableProperty]
     private string _pdfZoomLevel = "Zoom: 100%";
     [ObservableProperty]
@@ -88,6 +89,12 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
     public MainViewModel()
     {
         IsPdfPickerOpen = false;
+        PdfPages = new ObservableCollection<Bitmap>{
+            new Bitmap("assets/000000.png"),
+            Util.LoadImageAsBitmap(
+                Path.GetFullPath("assets/000000.png")
+            )
+        };
         _chart = new Chart();
     }
 }

@@ -22,6 +22,7 @@ public class MatToBitmapConverter : IValueConverter {
                 VectorOfByte matBytes = new VectorOfByte();
                 CvInvoke.Imencode(".png", mat, matBytes);
                 imageStream.Write(matBytes.ToArray());
+                imageStream.Position = 0;
                 return new Bitmap(imageStream);
             }
         }

@@ -21,8 +21,7 @@ public class TestConvert
     [InlineData("000000.png")]
     public void TestValidArguments(string imageName)
     {
-        string imagePath = Path.GetFullPath(
-            "../../../test assets/" + imageName);
+        string imagePath = "../../../test assets/" + imageName;
         Bitmap expectedBitmap = new Bitmap(imagePath);
 
         MatToBitmapConverter converter = new MatToBitmapConverter();

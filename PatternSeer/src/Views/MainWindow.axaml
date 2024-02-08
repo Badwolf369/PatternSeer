@@ -16,7 +16,7 @@
                 <TabItem Name="PdfViewer" Header="PDF">
                     <Grid RowDefinitions="*,1,25">
                         <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
-                            <ItemsControl ItemsSource="{Binding PdfPages, Converter={StaticResource MatToBitmapConverter}}">
+                            <ItemsControl ItemsSource="{Binding PdfPages}">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
                                         <Border Background="LightGray" Padding="50">

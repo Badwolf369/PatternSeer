@@ -6,5 +6,6 @@ using Avalonia.Headless;
 public class TestAppBuilder
 {
     public static AppBuilder BuildAvaloniaApp() => AppBuilder.Configure<App>()
-        .UseHeadless(new AvaloniaHeadlessPlatformOptions());
+        .UseHeadless(new AvaloniaHeadlessPlatformOptions())
+        .UseSkia();
 }

@@ -24,6 +24,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <ProjectReference Include="..\PatternSeer\PatternSeer.csproj" />
+    <AvaloniaResource Include="test assets\**" />
   </ItemGroup>
 
 </Project>
