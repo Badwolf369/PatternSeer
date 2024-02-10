@@ -5,33 +5,56 @@ using SkiaSharp;
 namespace PatternSeer.Models;
 
 /// <summary>
-/// Wrapper for all information regarding a cross stitch chartww
+/// Wrapper for all information regarding a cross stitch chart
 /// </summary>
-public class Chart {
+public class Chart
+{
+    /* #region Fields */
     /// <summary>
     /// Contains the path to the currently opened PDF
     /// </summary>
     private string _pdfPath;
+    /* #endregion Fields */
+
+    /* #region Properties */
     /// <summary>
-    /// Contains the generated design pattern
+    /// Key used to associate the pattern's symbols with colors
     /// </summary>
-    private ChartPattern _pattern;
+    public ChartKey Key { get; private set; }
     /// <summary>
-    /// Contains the pattern's color & symbol key
+    /// Number of pages that make up the chart
     /// </summary>
-    private ChartKey _key;
+    public int PageCount { get; private set; }
+    /// <summary>
+    /// Design's generated stitch pattern
+    /// </summary>
+    public ChartPattern Pattern { get; private set; }
+    /// <summary>
+    /// Image version of each page of the chart, incl. cover page, and key
+    /// </summary>
+    public List<Mat> PdfPages { get; set; }
+    /* #endregion Properties */
 
-    public List<Mat> PdfPages;
-    public int PageCount;
-
-    public ChartPattern getPattern() {
-        return _pattern;
+    /* #region Constructor */
+    public Chart()
+    {
+        PdfPages = new List<Mat>();
     }
-    public ChartKey getKey() {
-        return _key;
-    }
+    /* #endregion Constructtor */
 
-    public void ImportPdf(string path) {
+    /* #region Private Methods */
+    /* #endregion Private Methods */
+
+    /* #region Public Methods */
+    /// <summary>
+    /// Imports a new PDF file into a list of images
+    /// </summary>
+    /// <param name="path">Path to the PDF</param>
+    /// <exception cref="ArgumentOutOfRangeException" />
+    /// <exception cref="FileNotFoundException" />
+    /// <exception cref="PathNotFoundException" />
+    public void ImportPdf(string path)
+    {
         if (!path.EndsWith(".pdf")) throw new ArgumentOutOfRangeException(
             $"Error: expected a PDF file, got {path}"
         );
@@ -46,7 +69,7 @@ public class Chart {
             using (MemoryStream imageStream = new MemoryStream())
             {
                 pdfPagesSKBmps[page].Encode(
-                    imageStream,SKEncodedImageFormat.Png, 100);
+                    imageStream, SKEncodedImageFormat.Png, 100);
                 PdfPages.Add(new Mat());
                 CvInvoke.Imdecode(
                     imageStream.ToArray(), ImreadModes.Color, PdfPages[page]);
@@ -54,9 +77,5 @@ public class Chart {
         }
         PageCount = PdfPages.Count();
     }
-
-    public Chart()
-    {
-        PdfPages = new List<Mat>();
-    }
+    /* #endregion Public Methods */
 }

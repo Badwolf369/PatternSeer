@@ -5,11 +5,12 @@ class Program {
 }
 class Chart {
     -_pdfPath : String
-    -_pattern : ChartPattern
-    -_key : ChartKey
-    -_pageCount : Int
-    -<i/o>_pdfPages : List<Mat>
-
+    +Key : ChartKey <<g/-s>>
+    +PageCount : Int <<g/-s>>
+    +Pattern : ChartPattern <<g/-s>>
+    +PdfPages : List<Mat> <<g/s>>
+    +Chart()
+    +ImportPdf(path: String)
 }
 class ChartPattern {
     -SourceImages : List<List<Mat>>
