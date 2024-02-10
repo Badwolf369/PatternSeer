@@ -7,13 +7,14 @@ To do before the next pull request
     [ ] App.axaml.cs
     [ ] MainWindow.cs
     [ ] ViewUtils.cs
+    [ ] Class diagram
 [ ] Create unit tests
     [ ] MatToBitmapConverter.Convert()
-        [ ] Working tests
+        [x] Working tests
         [ ] Non-mat input
         [ ] Non-bitmap expected output type
     [ ] MatToBitmapConverter.ConvertBack()
-        [ ] Working test
+        [x] Working test
         [ ] Non-bitmap input
         [ ] Non-mat expected output type
     [ ] MainViewModel update event runs when
