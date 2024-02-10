@@ -8,17 +8,27 @@ namespace PatternSeer.Models;
 /// Wrapper for all information regarding a cross stitch chartww
 /// </summary>
 public class Chart {
-    private string PdfPath;
+    /// <summary>
+    /// Contains the path to the currently opened PDF
+    /// </summary>
+    private string _pdfPath;
+    /// <summary>
+    /// Contains the generated design pattern
+    /// </summary>
+    private ChartPattern _pattern;
+    /// <summary>
+    /// Contains the pattern's color & symbol key
+    /// </summary>
+    private ChartKey _key;
+
     public List<Mat> PdfPages;
     public int PageCount;
-    private ChartPattern Pattern;
-    private ChartKey Key;
 
     public ChartPattern getPattern() {
-        return Pattern;
+        return _pattern;
     }
     public ChartKey getKey() {
-        return Key;
+        return _key;
     }
 
     public void ImportPdf(string path) {
@@ -26,17 +36,20 @@ public class Chart {
             $"Error: expected a PDF file, got {path}"
         );
 
-        PdfPath = path;
+        _pdfPath = path;
         byte[] pdfBytes = File.ReadAllBytes(path);
         string pdfBase64 = Convert.ToBase64String(pdfBytes);
-        var pdfPagesSKBmps = PDFtoImage.Conversion.ToImages(pdfBase64).Cast<SKBitmap>().ToList();
+        var pdfPagesSKBmps = PDFtoImage.Conversion.ToImages(pdfBase64)
+            .Cast<SKBitmap>().ToList();
         for (int page = 0; page < pdfPagesSKBmps.Count; page++)
         {
             using (MemoryStream imageStream = new MemoryStream())
             {
-                pdfPagesSKBmps[page].Encode(imageStream, SKEncodedImageFormat.Png, 100);
+                pdfPagesSKBmps[page].Encode(
+                    imageStream,SKEncodedImageFormat.Png, 100);
                 PdfPages.Add(new Mat());
-                CvInvoke.Imdecode(imageStream.ToArray(), ImreadModes.Color, PdfPages[page]);
+                CvInvoke.Imdecode(
+                    imageStream.ToArray(), ImreadModes.Color, PdfPages[page]);
             }
         }
         PageCount = PdfPages.Count();
