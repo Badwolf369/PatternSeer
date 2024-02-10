@@ -4,10 +4,12 @@ class Program {
     Main(String[]:args)
 }
 class Chart {
-    -SourceImages : List<Mat>
-    -<o> Pattern : ChartPattern
-    -<o> Key : ChartKey
-    +Chart(source:List<Mat>)
+    -_pdfPath : String
+    -_pattern : ChartPattern
+    -_key : ChartKey
+    -_pageCount : Int
+    -<i/o>_pdfPages : List<Mat>
+
 }
 class ChartPattern {
     -SourceImages : List<List<Mat>>
