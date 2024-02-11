@@ -4,7 +4,7 @@ class Program {
     Main(String[]:args)
 }
 class Chart {
-    -_pdfPath : String
+    -pdfPath : String
     +Key : ChartKey <<g/-s>>
     +PageCount : Int <<g/-s>>
     +Pattern : ChartPattern <<g/-s>>
@@ -13,14 +13,14 @@ class Chart {
     +ImportPdf(path: String)
 }
 class ChartPattern {
-    -SourceImages : List<List<Mat>>
-    -<o> Width : Integer > 0
-    -<o> Height : Integer > 0
-    -<o> Grid : List<List<*KeySymbols>>
-    +ChartPattern(sourceImages: List<List<Mat>>, key:ChartKey)
+    -unkeyedGrid : List<List<Mat>>
+    -keyedGrid : List<List<KeySymbol>>
+    +Size : Tuple<int, int> >= (0, 0) <<g/-s>>
+    +ChartPattern(symbolImages: List<List<Mat>>, key:ChartKey)
+    +KeyGrid(key:ChartKey)
+    +GetKeySymbolAt(x: int, y: int) : KeySymbol
 }
 class ChartKey {
-    -SourceImage : Mat
     -<o> Symbols : List<KeySymbol>
     +ChartKey(source:Mat)
     +MatchSymbol(image:Mat) : *KeySymbol
