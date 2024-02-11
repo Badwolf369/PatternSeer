@@ -1,7 +1,7 @@
 To do before the next pull request
 
 [ ] Update documentation
-    [ ] Chart.cs
+    [x] Chart.cs
     [ ] MainViewModel.cs
     [ ] Program.cs
     [ ] App.axaml.cs
