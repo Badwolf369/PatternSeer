@@ -35,7 +35,7 @@ public class Chart
     public List<Mat> PdfPages { get; set; }
     /* #endregion Properties */
 
-    /* #region Constructor */
+    /* #region Constructors */
     public Chart()
     {
         PdfPages = new List<Mat>();
