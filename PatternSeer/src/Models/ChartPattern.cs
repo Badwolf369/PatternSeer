@@ -1,18 +1,38 @@
+using Emgu.CV;
+
 namespace PatternSeer.Models;
 
-public class ChartPattern {
-    //TODO: Int here shall be replaced with the OpenCV image type
-    private List<List<int>> SourceImages;
-    private int[] Size = {0, 0};
-    private List<List<KeySymbol>> Grid;
+public class ChartPattern
+{
 
-    public int[] getSize() {
-        return Size;
+    /* #region Fields */
+    private List<List<Mat>> _unkeyedGrid;
+    private List<List<KeySymbol>> _keyedGrid;
+    /* #endregion Fields */
+
+    /* #region Properties */
+    public Tuple<int, int> Size { get; private set; }
+    /* #endregion Properties */
+
+    /* #region Constructors */
+    public ChartPattern(List<List<Mat>> unkeyedPattern, ChartKey key)
+    {
+        
     }
-    public KeySymbol GetSymbol(int x, int y) {
-        return Grid[y][x];
+    /* #endregion Constructors */
+
+    /* #region Private Methods */
+    /* #endregion Private Methods */
+
+    /* #region Public Methods */
+    public KeySymbol GetSymbolAt(int x, int y)
+    {
+        return _keyedGrid[y][x];
     }
 
-    //TODO: Int here shall be replaced with the OpenCV image type
-    public ChartPattern(List<List<int>> sourceImages, ChartKey key) {}
+    public void KeyGrid(ChartKey Key)
+    {
+
+    }
+    /* #endregion Public Methods */
 }

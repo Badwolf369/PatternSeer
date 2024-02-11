@@ -16,9 +16,9 @@ class ChartPattern {
     -unkeyedGrid : List<List<Mat>>
     -keyedGrid : List<List<KeySymbol>>
     +Size : Tuple<int, int> >= (0, 0) <<g/-s>>
-    +ChartPattern(symbolImages: List<List<Mat>>, key:ChartKey)
-    +KeyGrid(key:ChartKey)
+    +ChartPattern(unkeyedPattern: List<List<Mat>>, key:ChartKey)
     +GetKeySymbolAt(x: int, y: int) : KeySymbol
+    +KeyGrid(key:ChartKey)
 }
 class ChartKey {
     -<o> Symbols : List<KeySymbol>
