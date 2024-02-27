@@ -7,7 +7,7 @@
     Width="800" Height="600"
     Title="PatternSeer" Icon="\assets\logo.ico">
     <Window.Resources>
-        <converters:MatToBitmapConverter x:Key="MatToBitmapConverter" />
+        <converters:MatToBitmapConverter x:Key="matToBitmapConverter" />
     </Window.Resources>
 
     <Panel>
@@ -20,7 +20,7 @@
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
                                         <Border Background="LightGray" Padding="50">
-                                            <Image Source="{Binding}" Stretch="Uniform" />
+                                            <Image Source="{Binding, Converter={StaticResource matToBitmapConverter}}" Stretch="Uniform" />
                                         </Border>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
@@ -51,7 +51,7 @@
                         <Grid ColumnDefinitions="*,*">
                             <Button Grid.Column="0" Content="From PDF" Margin="2"
                             HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
-                            Command="{Binding ImportPdfCommand}" />
+                            Command="{Binding ImportFromPdfCommand}" />
                             <Button Grid.Column="1" Content="From Images" Margin="2"
                             HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
                         </Grid>
