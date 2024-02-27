@@ -17,6 +17,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        this.AttachDevTools();
         this.Bind(IsPdfPickerOpenProperty, new Binding("IsPdfPickerOpen")
             { Mode = BindingMode.TwoWay });
         this.Bind(PdfFilePathProperty, new Binding("PdfFilePath")
