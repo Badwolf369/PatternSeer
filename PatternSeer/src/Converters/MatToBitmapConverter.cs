@@ -1,6 +1,8 @@
+using System.Diagnostics;
 using System.Globalization;
 using Avalonia;
 using Avalonia.Data.Converters;
+using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Emgu.CV;
 using Emgu.CV.CvEnum;
@@ -9,13 +11,13 @@ using Emgu.CV.Util;
 namespace PatternSeer.Converters;
 
 /// <summary>
-/// Value converter that converts from Emgu.CV.Mat to
-/// Avalonia.Media.Imaging.Bitmap.
+/// <c>IValueConverter</c> that converts from <c>Emgu.CV.Mat</c> to
+/// <c>Avalonia.Media.Imaging.Bitmap</c>.
 /// </summary>
 public class MatToBitmapConverter : IValueConverter {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value is Mat mat && targetType == typeof(Bitmap))
+        if (value is Mat mat && targetType == typeof(IImage))
         {
             using (MemoryStream imageStream = new MemoryStream())
             {
@@ -26,10 +28,8 @@ public class MatToBitmapConverter : IValueConverter {
                 return new Bitmap(imageStream);
             }
         }
-        else
-        {
-            return AvaloniaProperty.UnsetValue;
-        }
+
+        return AvaloniaProperty.UnsetValue;
     }
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
@@ -44,6 +44,7 @@ public class MatToBitmapConverter : IValueConverter {
                 return mat;
             }
         }
+
         return AvaloniaProperty.UnsetValue;
     }
 }
