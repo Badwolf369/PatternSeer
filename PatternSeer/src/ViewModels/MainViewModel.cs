@@ -7,7 +7,6 @@ using CommunityToolkit.Mvvm.Input;
 using Emgu.CV;
 using PatternSeer.Models;
 
-
 namespace PatternSeer.ViewModels;
 
 /// <summary>
@@ -15,6 +14,18 @@ namespace PatternSeer.ViewModels;
 /// </summary>
 public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
 {
+    /* #region Fields */
+    private Chart _chart;
+    /// <summary>
+    /// Signal to allow import and open commands to pause and wait until
+    /// the file picker closes.
+    /// </summary>
+    private SemaphoreSlim _filePickerSemaphore;
+    /* #endregion Fields */
+
+    /* #region Properties */
+    /* #endregion Properties */
+
     /* #region Observable Properties */
     /// <summary>
     /// Is/should the pdf file picker currently be open?
@@ -26,50 +37,42 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
     /// </summary>
     [ObservableProperty]
     private string _pdfFilePath;
-
+    /// <summary>
+    /// List of the pages in the currently opened PDF.
+    /// </summary>
     [ObservableProperty]
-    private ObservableCollection<Bitmap> _pdfPages;
+    private ObservableCollection<Mat> _pdfPages;
+    /// <summary>
+    /// Zoom level for the PDF viewer.
+    /// </summary>
     [ObservableProperty]
     private string _pdfZoomLevel = "Zoom: 100%";
+    /// <summary>
+    /// Which page(s) of the PDF is currently visible in the PDF viewer?
+    /// </summary>
     [ObservableProperty]
     private string _visiblePdfPage = "Page 0";
-    /* #endregion Observable Properties */
+    /* #endregion Observable Properties*/
 
-    /* #region Private Properties */
-    private Chart _chart;
+    /* #region Constructors */
     /// <summary>
-    /// Signal to allow the ImportPdf command to pause and wait until
-    /// the file picker closes.
+    /// Initializes a new instance of the <c>MainWindowViewModel</c> class.
     /// </summary>
-    private SemaphoreSlim PdfPickerThreads;
-    /* #endregion Private Properties */
-
-    /* #region PDF Import Command */
-
-    /// <summary>
-    /// Open a file picker then print the path to the picked file.
-    /// </summary>
-    [RelayCommand]
-    private async void ImportPdf()
+    public MainViewModel()
     {
-        IsPdfPickerOpen = true;
-        PdfPickerThreads = new SemaphoreSlim(1, 2);
-        await PdfPickerThreads.WaitAsync();
-
-        if (PdfFilePath is not null) {
-            Debug.WriteLine($"Picked {PdfFilePath}");
-            _chart.ImportPdf(PdfFilePath);
-            // PdfPages = new ObservableCollection<Mat>(_chart.PdfPages);
-        } else {
-            Debug.WriteLine("No file was picked");
-        }
+        IsPdfPickerOpen = false;
+        _chart = new Chart();
     }
-    /* #endregion PDF Import Command */
+    /* #endregion Constructors */
 
+    /* #region Private Methods */
+    /* #endregion Private Methods */
+
+    /* #region Public Methods */
     /// <summary>
     /// Runs when an observable property in the ViewModel is updated.
     /// </summary>
-    /// <param name="sender">ViewModel property that was updated.</param>
+    /// <param name="sender">ViewModel being updated.</param>
     /// <param name="e">Arguments related to the event caller.</param>
     public void OnViewModelUpdate(object sender, PropertyChangedEventArgs e)
     {
@@ -78,24 +81,31 @@ public partial class MainViewModel : ObservableObject, INotifyPropertyChanged
             // When IsPdfPickerOpen is updated to false, release a semaphore
             // to everything waiting for the pdf picker to close
             case (nameof(IsPdfPickerOpen)):
-                if (!IsPdfPickerOpen) PdfPickerThreads.Release();
+                if (!IsPdfPickerOpen) _filePickerSemaphore.Release();
                 break;
         }
     }
+    /* #endregion Public Methods */
 
+    /* #region ICommands */
     /// <summary>
-    /// Initialize a new instance of the <c>MainWindowViewModel</c> class.
+    /// Open a file picker then print the path to the picked file.
     /// </summary>
-    public MainViewModel()
+    [RelayCommand]
+    private async void ImportFromPdf()
     {
-        IsPdfPickerOpen = false;
-        PdfPages = new ObservableCollection<Bitmap>{
-            new Bitmap("assets/000000.png"),
-            Util.LoadImageAsBitmap(
-                Path.GetFullPath("assets/000000.png")
-            )
-        };
-        _chart = new Chart();
+        _filePickerSemaphore = new SemaphoreSlim(0, 1);
+        IsPdfPickerOpen = true;
+        await _filePickerSemaphore.WaitAsync();
+
+        if (PdfFilePath is not null) {
+            Debug.WriteLine($"Picked {PdfFilePath}");
+            _chart.ImportPdf(PdfFilePath);
+            PdfPages = new ObservableCollection<Mat>(_chart.PdfPages);
+        } else {
+            Debug.WriteLine("No file was picked");
+        }
     }
+    /* #endregion ICommands */
 }
 
