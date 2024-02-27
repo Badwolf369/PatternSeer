@@ -5,6 +5,7 @@ using Avalonia.Media.Imaging;
 using System.Globalization;
 using Avalonia.Headless.XUnit;
 using FluentAssertions;
+using Avalonia.Media;
 
 namespace TestMatToBitmapConverter;
 
@@ -27,7 +28,7 @@ public class TestConvert
         MatToBitmapConverter converter = new MatToBitmapConverter();
         Mat mat = CvInvoke.Imread(imagePath);
         Bitmap convertedBitmap = (Bitmap)converter.Convert(
-            mat, typeof(Bitmap), null, CultureInfo.CurrentCulture);
+            mat, typeof(IImage), null, CultureInfo.CurrentCulture);
 
         convertedBitmap.Should().BeEquivalentTo(expectedBitmap);
     }
