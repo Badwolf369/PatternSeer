@@ -29,6 +29,7 @@ public class MatToBitmapConverter : IValueConverter {
             }
         }
 
+        Debug.WriteLine("Something went wrong converting from Mat to Bitmap.");
         return AvaloniaProperty.UnsetValue;
     }
 
@@ -45,6 +46,7 @@ public class MatToBitmapConverter : IValueConverter {
             }
         }
 
+        Debug.WriteLine("Something went wrong converting back from Bitmap to Mat.");
         return AvaloniaProperty.UnsetValue;
     }
 }
